@@ -2,6 +2,10 @@ package com.twu.biblioteca.router;
 
 import com.twu.biblioteca.Service.BibliotecaService;
 import com.twu.biblioteca.model.ModelExtension;
+import com.twu.biblioteca.router.handler.CheckBookHandler;
+import com.twu.biblioteca.router.handler.InitialHandler;
+import com.twu.biblioteca.router.handler.MainMenuHandler;
+import com.twu.biblioteca.router.handler.ReturnBookHandler;
 
 public class BibliotecaRouter {
     private RouterContext routerContext;
@@ -14,43 +18,18 @@ public class BibliotecaRouter {
     }
 
     public RouterMessage getRouterMessage(String userInput) throws Exception {
-        if (routerContext.getCurrentState() == RouterState.Initialize) {
-            routerContext.setNextState(RouterState.MainMenu);
-            return new RouterMessage("Welcome to Biblioteca!", false, false);
-        }
-        else if (routerContext.getCurrentState() == RouterState.MainMenu) {
-            if (userInput == null) {
-                return new RouterMessage(MainMenuString.getString(), true, false);
-            } else if (userInput.equals("1")) {
-                return new RouterMessage(ModelExtension.toFormattedString(bibliotecaService.listAllBooks()), false, false);
-            } else if (userInput.equals("2")) {
-                routerContext.setNextState(RouterState.CheckBook);
-                return new RouterMessage("", true, false);
-            } else if (userInput.equals("3")) {
-                routerContext.setNextState(RouterState.ReturnBook);
-                return new RouterMessage("", true, false);
-            } else if (userInput.equals("4")) {
-                return new RouterMessage("", false, true);
-            } else {
-                return new RouterMessage("Select a valid option!", false, false);
-            }
-        } else if (routerContext.getCurrentState() == RouterState.CheckBook) {
-            routerContext.setNextState(RouterState.MainMenu);
-
-            if (bibliotecaService.checkoutBook(userInput)) {
-                return new RouterMessage("Thank you! Enjoy the book", false, false);
-            } else {
-                return new RouterMessage("That book is not available.", false, false);
-            }
-        } else if (routerContext.getCurrentState() == RouterState.ReturnBook) {
-            routerContext.setNextState(RouterState.MainMenu);
-            if (bibliotecaService.returnBook(userInput)) {
-                return new RouterMessage("Thank you for returning the book.", false, false);
-            } else {
-                return new RouterMessage("That is not a valid book to return.", false, false);
-            }
+        switch (routerContext.getCurrentState()) {
+            case Initialize:
+                return new InitialHandler(routerContext).handle(userInput);
+            case MainMenu:
+                return new MainMenuHandler(routerContext, bibliotecaService).handle(userInput);
+            case CheckBook:
+                return new CheckBookHandler(routerContext, bibliotecaService).handle(userInput);
+            case ReturnBook:
+                return new ReturnBookHandler(routerContext, bibliotecaService).handle(userInput);
         }
 
         throw new Exception("Invalid router state!");
     }
 }
+
