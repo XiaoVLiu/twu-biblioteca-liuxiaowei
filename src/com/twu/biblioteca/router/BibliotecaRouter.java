@@ -42,6 +42,9 @@ public class BibliotecaRouter {
             }
         } else if (routerContext.getCurrentState() == RouterState.ReturnBook) {
             routerContext.setNextState(RouterState.MainMenu);
+            if (bibliotecaService.returnBook(userInput)) {
+                return new RouterMessage("Thank you for returning the book.", false, false);
+            }
             return new RouterMessage("", false, false);
         }
 

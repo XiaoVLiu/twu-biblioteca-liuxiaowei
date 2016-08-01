@@ -136,4 +136,14 @@ public class ShellTests {
 
         assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).text);
     }
+
+    @Test
+    public void should_display_successful_message_when_user_input_a_valid_book_in_return_book_state() throws Exception {
+        ArrayList<Book> books = new ArrayList<Book>();
+        books.add(new Book("Book", "Anthor", 1, true));
+
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.ReturnBook, new BibliotecaService(books));
+
+        assertEquals("Thank you for returning the book.", bibliotecaRouter.getRouterMessage("Book").getText());
+    }
 }
