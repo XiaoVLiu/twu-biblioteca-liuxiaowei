@@ -21,10 +21,6 @@ public class Book {
         this.isChecked = isChecked;
     }
 
-    public String toString() {
-        return "Name: " + this.name + ", Author: " + this.author + ", Publish Year: " + this.publishYear + "\n";
-    }
-
     public String getName() {
         return name;
     }
@@ -35,5 +31,13 @@ public class Book {
 
     public void setIsChecked(boolean isChecked) {
         this.isChecked = isChecked;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getPublishYear() {
+        return publishYear;
     }
 }

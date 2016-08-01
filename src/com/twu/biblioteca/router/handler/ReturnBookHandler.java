@@ -17,10 +17,11 @@ public class ReturnBookHandler implements IActionHandler{
     @Override
     public RouterMessage handle(String userInput) {
         routerContext.setNextState(RouterState.MainMenu);
+
         if (bibliotecaService.returnBook(userInput)) {
             return new RouterMessage("Thank you for returning the book.", false, false);
-        } else {
-            return new RouterMessage("That is not a valid book to return.", false, false);
         }
+
+        return new RouterMessage("That is not a valid book to return.", false, false);
     }
 }

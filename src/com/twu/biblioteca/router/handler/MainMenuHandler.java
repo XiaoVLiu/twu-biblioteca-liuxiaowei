@@ -35,6 +35,7 @@ public class MainMenuHandler  implements IActionHandler{
             routerContext.setNextState(RouterState.ReturnBook);
             return new RouterMessage("", true, false);
         }
+
         if (userInput.equals("4")) {
             return new RouterMessage("", false, true);
         }
