@@ -3,7 +3,12 @@ package com.twu.biblioteca.router;
 public class MainMenuString {
 
     private static final String mainMenuString =
-            String.format("************Main Menu************\n1. List Books\n*********************************\n");
+            "************Main Menu************\n" +
+                    "1. List Books\n" +
+                    "2. Checkout Book\n" +
+                    "3. Return Book\n" +
+                    "4. Quit\n" +
+                    "*********************************\n";
 
     public static String getString() {
         return mainMenuString;

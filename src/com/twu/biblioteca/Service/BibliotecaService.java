@@ -29,7 +29,7 @@ public class BibliotecaService {
 
     public boolean checkoutBook(String checkoutBookName) {
         for (Book book: allBooks) {
-            if (book.getName() == checkoutBookName && book.getIsChecked() == false) {
+            if (book.getName().equals(checkoutBookName) && !book.getIsChecked()) {
                 book.setIsChecked(true);
                 return true;
             }
@@ -40,7 +40,7 @@ public class BibliotecaService {
 
     public boolean returnBook(String returnBookName) {
         for (Book book : allBooks) {
-            if (book.getName() == returnBookName && book.getIsChecked()) {
+            if (book.getName().equals(returnBookName) && book.getIsChecked()) {
                 book.setIsChecked(false);
                 return true;
             }
