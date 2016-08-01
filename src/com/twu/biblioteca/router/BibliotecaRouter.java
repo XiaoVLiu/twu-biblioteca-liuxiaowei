@@ -16,17 +16,19 @@ public class BibliotecaRouter {
 
     public RouterMessage getRouterMessage(String option) throws Exception {
         if (routerState == RouterState.Initialize) {
-            return new RouterMessage("Welcome to Biblioteca!");
+            return new RouterMessage("Welcome to Biblioteca!", false);
         }
         else if (routerState == RouterState.MainMenu) {
             if (option == null) {
-                return new RouterMessage(MainMenuString.getString());
+                return new RouterMessage(MainMenuString.getString(), false);
             }
             if (option == "1") {
-                return new RouterMessage(ModelExtension.toFormattedString(bibliotecaService.listAllBooks()));
+                return new RouterMessage(ModelExtension.toFormattedString(bibliotecaService.listAllBooks()), false);
+            } else if (option == "4") {
+                return new RouterMessage("", true);
             }
             else {
-                return new RouterMessage("Select a valid option!");
+                return new RouterMessage("Select a valid option!", false);
             }
         }
 

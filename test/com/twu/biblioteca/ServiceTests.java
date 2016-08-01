@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 
+import com.sun.tools.internal.xjc.reader.dtd.bindinfo.BIAttribute;
 import com.twu.biblioteca.Service.BibliotecaService;
 import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.router.BibliotecaRouter;
@@ -14,6 +15,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ServiceTests {
     private ByteArrayOutputStream output;
@@ -86,5 +88,12 @@ public class ServiceTests {
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(null));
         bibliotecaRouter.getRouterMessage("invalid option");
         assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).text);
+    }
+
+    @Test
+    public void should_quit_when_user_select_quit_option_and_current_state_is_main_menu() throws Exception {
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, null);
+
+        assertTrue(bibliotecaRouter.getRouterMessage("4").isExit);
     }
 }
