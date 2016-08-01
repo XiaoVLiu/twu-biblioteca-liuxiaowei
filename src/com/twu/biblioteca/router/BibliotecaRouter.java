@@ -2,10 +2,7 @@ package com.twu.biblioteca.router;
 
 import com.twu.biblioteca.Service.BibliotecaService;
 import com.twu.biblioteca.model.ModelExtension;
-import com.twu.biblioteca.router.handler.CheckBookHandler;
-import com.twu.biblioteca.router.handler.InitialHandler;
-import com.twu.biblioteca.router.handler.MainMenuHandler;
-import com.twu.biblioteca.router.handler.ReturnBookHandler;
+import com.twu.biblioteca.router.handler.*;
 
 public class BibliotecaRouter {
     private RouterContext routerContext;
@@ -18,15 +15,19 @@ public class BibliotecaRouter {
     }
 
     public RouterMessage getRouterMessage(String userInput) throws Exception {
+        return getActionHandler().handle(userInput);
+    }
+
+    private IActionHandler getActionHandler() throws Exception {
         switch (routerContext.getCurrentState()) {
             case Initialize:
-                return new InitialHandler(routerContext).handle(userInput);
+                return new InitialHandler(routerContext);
             case MainMenu:
-                return new MainMenuHandler(routerContext, bibliotecaService).handle(userInput);
+                return new MainMenuHandler(routerContext, bibliotecaService);
             case CheckBook:
-                return new CheckBookHandler(routerContext, bibliotecaService).handle(userInput);
+                return new CheckBookHandler(routerContext, bibliotecaService);
             case ReturnBook:
-                return new ReturnBookHandler(routerContext, bibliotecaService).handle(userInput);
+                return new ReturnBookHandler(routerContext, bibliotecaService);
         }
 
         throw new Exception("Invalid router state!");
