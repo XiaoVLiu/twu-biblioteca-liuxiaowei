@@ -5,7 +5,7 @@ import com.twu.biblioteca.model.ModelExtension;
 import com.twu.biblioteca.source.MainMenuString;
 
 public class BibliotecaRouter {
-    private final RouterState routerState;
+    private RouterState routerState;
     private final BibliotecaService bibliotecaService;
 
     public BibliotecaRouter(RouterState routerState, BibliotecaService bibliotecaService) {
@@ -33,6 +33,9 @@ public class BibliotecaRouter {
             else {
                 return new RouterMessage("Select a valid option!", false, false);
             }
+        } else if (routerState == RouterState.CheckBook) {
+            routerState = RouterState.MainMenu;
+            return new RouterMessage("", false, false);
         }
 
         throw new Exception("Invalid state!");

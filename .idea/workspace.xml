@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ccb0809a-008d-4d55-a05a-1017e886b2e6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/router/BibliotecaRouter.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/router/BibliotecaRouter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/router/RouterMessage.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/router/RouterMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/router/RouterState.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/router/RouterState.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/ShellTests.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/ShellTests.java" />
     </list>
     <ignored path="biblioteca.iws" />
@@ -56,10 +56,10 @@
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ShellTests.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="370">
-              <caret line="71" column="46" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
+              <caret line="79" column="93" selection-start-line="79" selection-start-column="93" selection-end-line="79" selection-end-column="93" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1388#1394#0" expanded="true" />
+                <element signature="e#1342#1348#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,8 +68,8 @@
       <file leaf-file-name="BibliotecaRouter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/router/BibliotecaRouter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="25" column="114" selection-start-line="25" selection-start-column="109" selection-end-line="25" selection-end-column="114" />
+            <state relative-caret-position="250">
+              <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -175,9 +175,9 @@
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/model/Book.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/ServiceTests.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Service/BibliotecaService.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/ShellTests.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/router/RouterMessage.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/router/BibliotecaRouter.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/ShellTests.java" />
       </list>
     </option>
   </component>
@@ -398,33 +398,7 @@
       <recent name="com.twu.biblioteca/service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ShellTests">
-    <configuration default="false" name="ServiceTests.should_return_false_when_book_is_checked_out" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="biblioteca" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.ServiceTests" />
-      <option name="METHOD_NAME" value="should_return_false_when_book_is_checked_out" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.ShellTests.should_display_main_menu_when_continue_getRouterMessage_after_input_check_book_in_check_out_state">
     <configuration default="false" name="ServiceTests.should_return_false_when_book_is_not_exist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -517,6 +491,32 @@
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.ShellTests" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ShellTests.should_display_main_menu_when_continue_getRouterMessage_after_input_check_book_in_check_out_state" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="biblioteca" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.ShellTests" />
+      <option name="METHOD_NAME" value="should_display_main_menu_when_continue_getRouterMessage_after_input_check_book_in_check_out_state" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -780,19 +780,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_return_false_when_book_is_checked_out" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_return_false_when_book_is_not_exist" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_list_unchecked_books_when_call_listAllBooks" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ShellTests.should_waiting_for_user_input_when_user_select_checkout_book_in_main_menu_state" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ShellTests" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_return_false_when_book_is_not_exist" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_list_unchecked_books_when_call_listAllBooks" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ShellTests.should_waiting_for_user_input_when_user_select_checkout_book_in_main_menu_state" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ShellTests" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ShellTests.should_display_main_menu_when_continue_getRouterMessage_after_input_check_book_in_check_out_state" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ShellTests" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ShellTests.should_waiting_for_user_input_when_user_select_checkout_book_in_main_menu_state" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_list_unchecked_books_when_call_listAllBooks" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_return_false_when_book_is_not_exist" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_return_false_when_book_is_checked_out" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ShellTests.should_display_main_menu_when_continue_getRouterMessage_after_input_check_book_in_check_out_state" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ShellTests" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ShellTests.should_waiting_for_user_input_when_user_select_checkout_book_in_main_menu_state" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_list_unchecked_books_when_call_listAllBooks" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_return_false_when_book_is_not_exist" />
       </list>
     </recent_temporary>
   </component>
@@ -810,9 +810,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ServiceTests_should_display_main_menu_when_continue_getRouterMessage_after_select_invalid_option_in_main_menu - 2016.08.01 at 17h 19m 04s.xml">
-      <configuration name="ServiceTests.should_display_main_menu_when_continue_getRouterMessage_after_select_invalid_option_in_main_menu" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ServiceTests_should_list_unchecked_books_when_call_listAllBooks - 2016.08.01 at 17h 30m 46s.xml">
       <configuration name="ServiceTests.should_list_unchecked_books_when_call_listAllBooks" configurationId="JUnit" />
     </history-entry>
@@ -821,12 +818,6 @@
     </history-entry>
     <history-entry file="ServiceTests_should_list_unchecked_books_when_call_listAllBooks - 2016.08.01 at 17h 33m 21s.xml">
       <configuration name="ServiceTests.should_list_unchecked_books_when_call_listAllBooks" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ServiceTests_should_return_false_when_book_is_checked_or_not_exist - 2016.08.01 at 17h 19m 18s.xml">
-      <configuration name="ServiceTests.should_return_false_when_book_is_checked_or_not_exist" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ServiceTests_should_return_false_when_book_is_checked_or_not_exist - 2016.08.01 at 17h 19m 39s.xml">
-      <configuration name="ServiceTests.should_return_false_when_book_is_checked_or_not_exist" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ServiceTests_should_return_false_when_book_is_checked_out - 2016.08.01 at 17h 23m 49s.xml">
       <configuration name="ServiceTests.should_return_false_when_book_is_checked_out" configurationId="JUnit" />
@@ -840,6 +831,15 @@
     <history-entry file="ShellTests - 2016.08.01 at 17h 45m 58s.xml">
       <configuration name="ShellTests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ShellTests_should_display_main_menu_when_continue_getRouterMessage_after_input_check_book_in_check_out_state - 2016.08.01 at 17h 57m 15s.xml">
+      <configuration name="ShellTests.should_display_main_menu_when_continue_getRouterMessage_after_input_check_book_in_check_out_state" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ShellTests_should_display_main_menu_when_continue_getRouterMessage_after_input_check_book_in_check_out_state - 2016.08.01 at 18h 00m 17s.xml">
+      <configuration name="ShellTests.should_display_main_menu_when_continue_getRouterMessage_after_input_check_book_in_check_out_state" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ShellTests_should_display_main_menu_when_continue_getRouterMessage_after_input_check_book_in_check_out_state - 2016.08.01 at 18h 00m 40s.xml">
+      <configuration name="ShellTests.should_display_main_menu_when_continue_getRouterMessage_after_input_check_book_in_check_out_state" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -852,7 +852,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -984,8 +984,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/router/BibliotecaRouter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="25" column="114" selection-start-line="25" selection-start-column="109" selection-end-line="25" selection-end-column="114" />
+        <state relative-caret-position="250">
+          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -993,10 +993,10 @@
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ShellTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
-          <caret line="71" column="46" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
+          <caret line="79" column="93" selection-start-line="79" selection-start-column="93" selection-end-line="79" selection-end-column="93" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1388#1394#0" expanded="true" />
+            <element signature="e#1342#1348#0" expanded="true" />
           </folding>
         </state>
       </provider>

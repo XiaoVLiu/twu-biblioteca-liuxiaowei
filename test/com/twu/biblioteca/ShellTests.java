@@ -15,14 +15,14 @@ import static org.junit.Assert.assertTrue;
 public class ShellTests {
     @Test
     public void should_display_welcome_message_when_current_state_is_initialize() throws Exception {
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.Initialize, new BibliotecaService(null));
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.Initialize, null);
 
         assertEquals("Welcome to Biblioteca!", bibliotecaRouter.getRouterMessage(null).text);
     }
 
     @Test
     public void should_display_main_menu_when_current_state_is_main_menu() {
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(null));
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, null);
 
         String expectedString = "************Main Menu************\n" +
                 "1. List Books\n" +
@@ -46,7 +46,7 @@ public class ShellTests {
 
     @Test
     public void should_return_invalid_message_when_user_not_select_list_books_in_main_menu_state() throws Exception {
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(null));
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, null);
 
         String invalidMessage = "Select a valid option!";
         assertEquals(invalidMessage, bibliotecaRouter.getRouterMessage("invalid option").text);
@@ -54,7 +54,7 @@ public class ShellTests {
 
     @Test
     public void should_display_main_menu_when_continue_getRouterMessage_after_select_invalid_option_in_main_menu() throws Exception {
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(null));
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, null);
         bibliotecaRouter.getRouterMessage("invalid option");
         assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).text);
     }
@@ -70,5 +70,13 @@ public class ShellTests {
     public void should_waiting_for_user_input_when_user_select_checkout_book_in_main_menu_state() throws Exception {
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, null);
         assertTrue(bibliotecaRouter.getRouterMessage("2").waitForInput);
+    }
+
+    @Test
+    public void should_display_main_menu_when_continue_getRouterMessage_after_input_check_book_in_check_out_state() throws Exception {
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, null);
+        bibliotecaRouter.getRouterMessage("any book");
+
+        assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).text);
     }
 }
