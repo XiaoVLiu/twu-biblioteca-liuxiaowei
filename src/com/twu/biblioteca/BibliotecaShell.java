@@ -33,11 +33,11 @@ public class BibliotecaShell {
             RouterMessage routerMessage = bibliotecaRouter.getRouterMessage(userInput);
             out.println(routerMessage.getText());
 
-            if (routerMessage.isExit) {
+            if (routerMessage.getIsExit()) {
                 break;
             }
 
-            if (routerMessage.waitForInput) {
+            if (routerMessage.getWaitForUserInput()) {
                 userInput = new Scanner(in).nextLine();
             } else {
                 userInput = null;

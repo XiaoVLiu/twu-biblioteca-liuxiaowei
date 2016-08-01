@@ -1,7 +1,6 @@
 package com.twu.biblioteca.router;
 
 import com.twu.biblioteca.Service.BibliotecaService;
-import com.twu.biblioteca.model.ModelExtension;
 import com.twu.biblioteca.router.handler.*;
 
 public class BibliotecaRouter {

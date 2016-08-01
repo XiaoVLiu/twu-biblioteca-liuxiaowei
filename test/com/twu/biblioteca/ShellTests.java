@@ -17,14 +17,14 @@ public class ShellTests {
     public void should_display_welcome_message_when_current_state_is_initialize() throws Exception {
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.Initialize, null);
 
-        assertEquals("Welcome to Biblioteca!", bibliotecaRouter.getRouterMessage(null).text);
+        assertEquals("Welcome to Biblioteca!", bibliotecaRouter.getRouterMessage(null).getText());
     }
 
     @Test
     public void should_display_main_menu_when_current_state_is_main_menu() throws Exception {
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, null);
 
-        assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).text);
+        assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).getText());
     }
 
     @Test
@@ -38,7 +38,7 @@ public class ShellTests {
         String expectedString = "Name: Book 1, Author: Xiaowei Liu, Publish Year: 1991\n" +
                 "Name: Book 2, Author: Xiao Liu, Publish Year: 2001\n";
 
-        assertEquals(expectedString, bibliotecaRouter.getRouterMessage("1").text);
+        assertEquals(expectedString, bibliotecaRouter.getRouterMessage("1").getText());
     }
 
     @Test
@@ -46,27 +46,27 @@ public class ShellTests {
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, null);
 
         String invalidMessage = "Select a valid option!";
-        assertEquals(invalidMessage, bibliotecaRouter.getRouterMessage("invalid option").text);
+        assertEquals(invalidMessage, bibliotecaRouter.getRouterMessage("invalid option").getText());
     }
 
     @Test
     public void should_display_main_menu_when_continue_getRouterMessage_after_select_invalid_option_in_main_menu() throws Exception {
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, null);
         bibliotecaRouter.getRouterMessage("invalid option");
-        assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).text);
+        assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).getText());
     }
 
     @Test
     public void should_quit_when_user_select_quit_option_and_current_state_is_main_menu() throws Exception {
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, null);
 
-        assertTrue(bibliotecaRouter.getRouterMessage("4").isExit);
+        assertTrue(bibliotecaRouter.getRouterMessage("4").getIsExit());
     }
 
     @Test
     public void should_waiting_for_user_input_when_user_select_checkout_book_in_main_menu_state() throws Exception {
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, null);
-        assertTrue(bibliotecaRouter.getRouterMessage("2").waitForInput);
+        assertTrue(bibliotecaRouter.getRouterMessage("2").getWaitForUserInput());
     }
 
     @Test
@@ -74,7 +74,7 @@ public class ShellTests {
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, new BibliotecaService(new ArrayList<Book>(0)));
         bibliotecaRouter.getRouterMessage("any book");
 
-        assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).text);
+        assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).getText());
     }
 
     @Test
@@ -89,7 +89,7 @@ public class ShellTests {
         String expectedString = "Name: Book 2, Author: Author 2, Publish Year: 2\n" +
                 "Name: Book 3, Author: Author 3, Publish Year: 3\n";
 
-        assertEquals(expectedString, bibliotecaRouter.getRouterMessage("1").text);
+        assertEquals(expectedString, bibliotecaRouter.getRouterMessage("1").getText());
     }
 
     @Test
@@ -134,7 +134,7 @@ public class ShellTests {
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.ReturnBook, new BibliotecaService(new ArrayList<Book>(0)));
         bibliotecaRouter.getRouterMessage("any book");
 
-        assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).text);
+        assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).getText());
     }
 
     @Test

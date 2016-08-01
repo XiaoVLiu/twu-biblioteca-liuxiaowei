@@ -1,9 +1,9 @@
 package com.twu.biblioteca.router;
 
 public class RouterMessage {
-    public String text;
-    public boolean isExit;
-    public boolean waitForInput;
+    private String text;
+    private boolean isExit;
+    private boolean waitForInput;
 
     public RouterMessage(String text, boolean waitForInput, boolean isExit) {
         this.text = text;
@@ -17,5 +17,9 @@ public class RouterMessage {
 
     public boolean getWaitForUserInput() {
         return waitForInput;
+    }
+
+    public boolean getIsExit() {
+        return isExit;
     }
 }
