@@ -27,10 +27,11 @@ public class BibliotecaShell {
         books.add(new Book("Book 3", "Author 3", 3));
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.Initialize, new BibliotecaService(books));
 
+        String userInput = null;
         while (true) {
-            String userInput = null;
+
             RouterMessage routerMessage = bibliotecaRouter.getRouterMessage(userInput);
-            out.println(routerMessage.text);
+            out.println(routerMessage.getText());
 
             if (routerMessage.isExit) {
                 break;

@@ -10,4 +10,8 @@ public class RouterMessage {
         this.waitForInput = waitForInput;
         this.isExit = isExit;
     }
+
+    public String getText() {
+        return text;
+    }
 }

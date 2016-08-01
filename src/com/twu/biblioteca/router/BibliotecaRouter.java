@@ -2,7 +2,6 @@ package com.twu.biblioteca.router;
 
 import com.twu.biblioteca.Service.BibliotecaService;
 import com.twu.biblioteca.model.ModelExtension;
-import com.twu.biblioteca.source.MainMenuString;
 
 public class BibliotecaRouter {
     private RouterState routerState;
@@ -38,7 +37,7 @@ public class BibliotecaRouter {
             return new RouterMessage("", false, false);
         }
 
-        throw new Exception("Invalid state!");
+        throw new Exception("Invalid router state!");
     }
 
     public static RouterMessage getRouterMessage2(BibliotecaRouter bibliotecaRouter, String option) throws Exception {
@@ -65,6 +64,6 @@ public class BibliotecaRouter {
             return new RouterMessage("", false, false);
         }
 
-        throw new Exception("Invalid state!");
+        throw new Exception("Invalid router state!");
     }
 }
