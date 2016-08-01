@@ -28,11 +28,12 @@ public class ServiceTests {
     }
 
     @Test
-    public void should_list_books_when_call_listAllBooks(){
+    public void should_list_all_books_when_call_listAllBooks(){
         ArrayList<Book> books = new ArrayList<Book>();
-        books.add(new Book("Book 1"));
-        books.add(new Book("Book 2"));
+        books.add(new Book("Book 1", "Xiaowei Liu", 1991));
+        books.add(new Book("Book 2", "Xiao Liu", 2001));
 
         assertEquals(books, new BibliotecaService(books).listAllBooks());
     }
+
 }
