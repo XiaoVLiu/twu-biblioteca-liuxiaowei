@@ -44,8 +44,9 @@ public class BibliotecaRouter {
             routerContext.setNextState(RouterState.MainMenu);
             if (bibliotecaService.returnBook(userInput)) {
                 return new RouterMessage("Thank you for returning the book.", false, false);
+            } else {
+                return new RouterMessage("That is not a valid book to return.", false, false);
             }
-            return new RouterMessage("", false, false);
         }
 
         throw new Exception("Invalid router state!");

@@ -146,4 +146,22 @@ public class ShellTests {
 
         assertEquals("Thank you for returning the book.", bibliotecaRouter.getRouterMessage("Book").getText());
     }
+
+    @Test
+    public void should_display_failed_message_when_user_input_unchecked_book_in_return_book_state() throws Exception {
+        ArrayList<Book> books = new ArrayList<Book>();
+        books.add(new Book("Unchecked Book", "Anthor", 1, false));
+
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.ReturnBook, new BibliotecaService(books));
+
+        assertEquals("That is not a valid book to return.", bibliotecaRouter.getRouterMessage("Unchecked Book").getText());
+    }
+
+    @Test
+    public void should_display_failed_message_when_user_input_not_exist_book_in_return_book_state() throws Exception {
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.ReturnBook,
+                new BibliotecaService(new ArrayList<Book>(0)));
+
+        assertEquals("That is not a valid book to return.", bibliotecaRouter.getRouterMessage("Not Exist Book").getText());
+    }
 }
