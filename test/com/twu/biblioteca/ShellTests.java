@@ -103,12 +103,22 @@ public class ShellTests {
     }
 
     @Test
-    public void should_display_not_available_message_when_user_input_an_invalid_book_name_in_checkout_book_state() throws Exception {
+    public void should_display_not_available_message_when_user_input_book_is_not_exist_in_checkout_book_state() throws Exception {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(new Book("Book", "Anthor", 1));
 
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, new BibliotecaService(books));
 
         assertEquals("That book is not available.", bibliotecaRouter.getRouterMessage("Invalid Book").getText());
+    }
+
+    @Test
+    public void should_display_not_available_message_when_user_input_book_is_checked_out_in_checkout_book_state() throws Exception {
+        ArrayList<Book> books = new ArrayList<Book>();
+        books.add(new Book("Book", "Anthor", 1, true));
+
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, new BibliotecaService(books));
+
+        assertEquals("That book is not available.", bibliotecaRouter.getRouterMessage("Book").getText());
     }
 }
