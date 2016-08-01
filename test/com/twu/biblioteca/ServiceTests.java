@@ -44,4 +44,14 @@ public class ServiceTests {
 
         assertEquals("Welcome to Biblioteca!", bibliotecaRouter.getRouterMessage().text);
     }
+
+    @Test
+    public void should_display_main_menu_when_current_state_is_main_menu() {
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(null));
+
+        String expectedString = "************Main Menu************\n" +
+                "1. List Books\n" +
+                "*********************************\n";
+        assertEquals(expectedString, bibliotecaRouter.getRouterMessage().text);
+    }
 }

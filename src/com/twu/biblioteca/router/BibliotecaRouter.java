@@ -1,6 +1,13 @@
 package com.twu.biblioteca.router;
 
+import com.sun.java_cup.internal.runtime.Scanner;
+import com.sun.tools.javac.file.Paths;
 import com.twu.biblioteca.BibliotecaService;
+import com.twu.biblioteca.source.MainMenuString;
+import javafx.scene.shape.Path;
+
+import java.io.File;
+import java.nio.file.Files;
 
 public class BibliotecaRouter {
     private final RouterState routerState;
@@ -13,6 +20,10 @@ public class BibliotecaRouter {
     }
 
     public RouterMessage getRouterMessage() {
-        return new RouterMessage("Welcome to Biblioteca!");
+        if (routerState == RouterState.Initialize) {
+            return new RouterMessage("Welcome to Biblioteca!");
+        }
+
+        return new RouterMessage(MainMenuString.getString());
     }
 }
