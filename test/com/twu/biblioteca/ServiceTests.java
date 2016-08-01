@@ -31,18 +31,23 @@ public class ServiceTests {
 
     @Test
     public void should_list_all_books_when_call_listAllBooks(){
+        ArrayList<Book> books = createBooks();
+
+        assertEquals(books, new BibliotecaService(books).listAllBooks());
+    }
+
+    private ArrayList<Book> createBooks() {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(new Book("Book 1", "Xiaowei Liu", 1991));
         books.add(new Book("Book 2", "Xiao Liu", 2001));
-
-        assertEquals(books, new BibliotecaService(books).listAllBooks());
+        return books;
     }
 
     @Test
     public void should_display_welcome_message_when_current_state_is_initialize() {
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.Initialize, new BibliotecaService(null));
 
-        assertEquals("Welcome to Biblioteca!", bibliotecaRouter.getRouterMessage().text);
+        assertEquals("Welcome to Biblioteca!", bibliotecaRouter.getRouterMessage(0).text);
     }
 
     @Test
@@ -52,6 +57,17 @@ public class ServiceTests {
         String expectedString = "************Main Menu************\n" +
                 "1. List Books\n" +
                 "*********************************\n";
-        assertEquals(expectedString, bibliotecaRouter.getRouterMessage().text);
+        assertEquals(expectedString, bibliotecaRouter.showMainMenu());
+    }
+
+    @Test
+    public void should_display_all_books_when_current_state_is_main_menu_and_user_select_list_books() {
+        ArrayList<Book> books = createBooks();
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(books));
+
+        String expectedString = "Name: Book 1, Author: Xiaowei Liu, Publish Year: 1991\n" +
+                "Name: Book 2, Author: Xiao Liu, Publish Year: 2001\n";
+
+        assertEquals(expectedString, bibliotecaRouter.getRouterMessage(1).text);
     }
 }

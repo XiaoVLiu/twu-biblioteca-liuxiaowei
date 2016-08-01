@@ -1,13 +1,8 @@
 package com.twu.biblioteca.router;
 
-import com.sun.java_cup.internal.runtime.Scanner;
-import com.sun.tools.javac.file.Paths;
 import com.twu.biblioteca.BibliotecaService;
+import com.twu.biblioteca.model.ModelExtension;
 import com.twu.biblioteca.source.MainMenuString;
-import javafx.scene.shape.Path;
-
-import java.io.File;
-import java.nio.file.Files;
 
 public class BibliotecaRouter {
     private final RouterState routerState;
@@ -19,11 +14,23 @@ public class BibliotecaRouter {
         this.bibliotecaService = bibliotecaService;
     }
 
-    public RouterMessage getRouterMessage() {
+    public RouterMessage getRouterMessage(int option) {
         if (routerState == RouterState.Initialize) {
             return new RouterMessage("Welcome to Biblioteca!");
         }
+        else if (routerState == RouterState.MainMenu) {
+            switch (option) {
+                case 1:
+                    return new RouterMessage(ModelExtension.toFormattedString(bibliotecaService.listAllBooks()));
+                default:
+                    return null;
+            }
+        }
 
         return new RouterMessage(MainMenuString.getString());
+    }
+
+    public String showMainMenu() {
+        return MainMenuString.getString();
     }
 }

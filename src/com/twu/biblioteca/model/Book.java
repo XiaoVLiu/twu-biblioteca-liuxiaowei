@@ -11,4 +11,8 @@ public class Book {
         this.author = author;
         this.publishYear = publishYear;
     }
+
+    public String toString() {
+        return "Name: " + this.name + ", Author: " + this.author + ", Publish Year: " + this.publishYear + "\n";
+    }
 }
