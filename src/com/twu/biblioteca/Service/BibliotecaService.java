@@ -37,4 +37,15 @@ public class BibliotecaService {
 
         return false;
     }
+
+    public boolean returnBook(String returnBookName) {
+        for (Book book : allBooks) {
+            if (book.getName() == returnBookName && book.getIsChecked()) {
+                book.setIsChecked(false);
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

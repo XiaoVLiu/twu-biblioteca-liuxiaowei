@@ -75,4 +75,25 @@ public class ServiceTests {
 
         assertEquals(books.subList(1, 2), new BibliotecaService(books).listAllBooks());
     }
+
+    @Test
+    public void should_return_true_when_return_a_checked_out_book() {
+        ArrayList<Book> books = new ArrayList<Book>();
+        books.add(new Book("Checked Book", "Author", 1, true));
+
+        assertTrue(new BibliotecaService(books).returnBook("Checked Book"));
+    }
+
+    @Test
+    public void should_return_false_when_return_unchecked_book() {
+        ArrayList<Book> books = new ArrayList<Book>();
+        books.add(new Book("Unchecked Book", "Author", 1, false));
+
+        assertFalse(new BibliotecaService(books).returnBook("Unchecked Book"));
+    }
+
+    @Test
+    public void should_return_false_when_return_a_not_exist_book() {
+        assertFalse(new BibliotecaService(new ArrayList<Book>(0)).returnBook("Not Exist Book"));
+    }
 }
