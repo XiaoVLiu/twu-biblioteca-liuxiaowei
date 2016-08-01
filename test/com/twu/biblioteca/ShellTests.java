@@ -21,13 +21,10 @@ public class ShellTests {
     }
 
     @Test
-    public void should_display_main_menu_when_current_state_is_main_menu() {
+    public void should_display_main_menu_when_current_state_is_main_menu() throws Exception {
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, null);
 
-        String expectedString = "************Main Menu************\n" +
-                "1. List Books\n" +
-                "*********************************\n";
-        assertEquals(expectedString, bibliotecaRouter.showMainMenu());
+        assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).text);
     }
 
     @Test
