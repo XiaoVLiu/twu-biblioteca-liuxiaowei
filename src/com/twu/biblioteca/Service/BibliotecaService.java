@@ -18,4 +18,15 @@ public class BibliotecaService {
     public ArrayList<Book> listAllBooks() {
         return allBooks;
     }
+
+    public boolean checkoutBook(String checkoutBookName) {
+        for (Book book: allBooks) {
+            if (book.name == checkoutBookName && book.isChecked == false) {
+                book.isChecked = true;
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

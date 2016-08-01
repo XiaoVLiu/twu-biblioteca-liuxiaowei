@@ -11,6 +11,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ServiceTests {
     private ByteArrayOutputStream output;
@@ -40,5 +41,14 @@ public class ServiceTests {
         books.add(new Book("Book 1", "Xiaowei Liu", 1991));
         books.add(new Book("Book 2", "Xiao Liu", 2001));
         return books;
+    }
+
+    @Test
+    public void should_return_true_when_book_is_unchecked_and_exist() {
+        ArrayList<Book> books = new ArrayList<Book>();
+        books.add(new Book("Book", "Author", 1));
+        BibliotecaService bibliotecaService = new BibliotecaService(books);
+
+        assertTrue(bibliotecaService.checkoutBook("Book"));
     }
 }
