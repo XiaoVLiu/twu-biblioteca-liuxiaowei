@@ -13,20 +13,20 @@ public class BibliotecaRouter {
         this.bibliotecaService = bibliotecaService;
     }
 
-    public RouterMessage getRouterMessage(String option) throws Exception {
+    public RouterMessage getRouterMessage(String userInput) throws Exception {
         if (routerContext.getCurrentState() == RouterState.Initialize) {
             return new RouterMessage("Welcome to Biblioteca!", false, false);
         }
         else if (routerContext.getCurrentState() == RouterState.MainMenu) {
-            if (option == null) {
+            if (userInput == null) {
                 return new RouterMessage(MainMenuString.getString(), true, false);
             }
-            if (option == "1") {
+            if (userInput == "1") {
                 return new RouterMessage(ModelExtension.toFormattedString(bibliotecaService.listAllBooks()), false, false);
-            } else if (option == "2") {
+            } else if (userInput == "2") {
                 return new RouterMessage("", true, false);
             }
-            else if (option == "4") {
+            else if (userInput == "4") {
                 return new RouterMessage("", false, true);
             }
             else {
@@ -34,6 +34,10 @@ public class BibliotecaRouter {
             }
         } else if (routerContext.getCurrentState() == RouterState.CheckBook) {
             routerContext.setNextState(RouterState.MainMenu);
+
+            if (bibliotecaService.checkoutBook(userInput)) {
+                return new RouterMessage("Thank you! Enjoy the book", false, false);
+            }
             return new RouterMessage("", false, false);
         }
 

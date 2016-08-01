@@ -71,7 +71,7 @@ public class ShellTests {
 
     @Test
     public void should_display_main_menu_when_continue_getRouterMessage_after_input_check_book_in_check_out_state() throws Exception {
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, null);
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, new BibliotecaService(new ArrayList<Book>(0)));
         bibliotecaRouter.getRouterMessage("any book");
 
         assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).text);
@@ -90,5 +90,15 @@ public class ShellTests {
                 "Name: Book 3, Author: Author 3, Publish Year: 3\n";
 
         assertEquals(expectedString, bibliotecaRouter.getRouterMessage("1").text);
+    }
+
+    @Test
+    public void should_display_enjoy_message_when_user_input_a_valid_book_name_in_checkout_book_state() throws Exception {
+        ArrayList<Book> books = new ArrayList<Book>();
+        books.add(new Book("Book", "Anthor", 1));
+
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, new BibliotecaService(books));
+
+        assertEquals("Thank you! Enjoy the book", bibliotecaRouter.getRouterMessage("Book").getText());
     }
 }
