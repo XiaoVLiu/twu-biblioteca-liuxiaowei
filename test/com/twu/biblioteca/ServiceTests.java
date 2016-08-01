@@ -11,6 +11,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class ServiceTests {
@@ -50,5 +51,23 @@ public class ServiceTests {
         BibliotecaService bibliotecaService = new BibliotecaService(books);
 
         assertTrue(bibliotecaService.checkoutBook("Book"));
+    }
+
+    @Test
+    public void should_return_false_when_book_is_not_exist() {
+        ArrayList<Book> books = new ArrayList<Book>();
+        books.add(new Book("Book", "Author", 1));
+        BibliotecaService bibliotecaService = new BibliotecaService(books);
+
+        assertFalse(bibliotecaService.checkoutBook("Invalid Book"));
+    }
+
+    @Test
+    public void should_return_false_when_book_is_checked_out() {
+        ArrayList<Book> books = new ArrayList<Book>();
+        books.add(new Book("Checked Book", "Author", 1, true));
+        BibliotecaService bibliotecaService = new BibliotecaService(books);
+
+        assertFalse(bibliotecaService.checkoutBook("Checked Book"));
     }
 }

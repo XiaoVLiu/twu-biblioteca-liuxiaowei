@@ -13,6 +13,14 @@ public class Book {
         this.publishYear = publishYear;
     }
 
+    public Book(String name, String author, int publishYear, boolean isChecked) {
+
+        this.name = name;
+        this.author = author;
+        this.publishYear = publishYear;
+        this.isChecked = isChecked;
+    }
+
     public String toString() {
         return "Name: " + this.name + ", Author: " + this.author + ", Publish Year: " + this.publishYear + "\n";
     }
