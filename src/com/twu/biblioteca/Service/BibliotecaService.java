@@ -19,7 +19,7 @@ public class BibliotecaService {
         ArrayList<Book> showBooks = new ArrayList<Book>();
 
         for (Book book : allBooks) {
-            if (!book.isChecked) {
+            if (!book.getIsChecked()) {
                 showBooks.add(book);
             }
         }
@@ -29,8 +29,8 @@ public class BibliotecaService {
 
     public boolean checkoutBook(String checkoutBookName) {
         for (Book book: allBooks) {
-            if (book.name == checkoutBookName && book.isChecked == false) {
-                book.isChecked = true;
+            if (book.getName() == checkoutBookName && book.getIsChecked() == false) {
+                book.setIsChecked(true);
                 return true;
             }
         }

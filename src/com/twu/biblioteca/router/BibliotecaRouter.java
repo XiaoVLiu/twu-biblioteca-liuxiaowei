@@ -41,7 +41,30 @@ public class BibliotecaRouter {
         throw new Exception("Invalid state!");
     }
 
-    public String showMainMenu() {
-        return MainMenuString.getString();
+    public static RouterMessage getRouterMessage2(BibliotecaRouter bibliotecaRouter, String option) throws Exception {
+        if (bibliotecaRouter.routerState == RouterState.Initialize) {
+            return new RouterMessage("Welcome to Biblioteca!", false, false);
+        }
+        else if (bibliotecaRouter.routerState == RouterState.MainMenu) {
+            if (option == null) {
+                return new RouterMessage(MainMenuString.getString(), true, false);
+            }
+            if (option == "1") {
+                return new RouterMessage(ModelExtension.toFormattedString(bibliotecaRouter.bibliotecaService.listAllBooks()), false, false);
+            } else if (option == "2") {
+                return new RouterMessage("", true, false);
+            }
+            else if (option == "4") {
+                return new RouterMessage("", false, true);
+            }
+            else {
+                return new RouterMessage("Select a valid option!", false, false);
+            }
+        } else if (bibliotecaRouter.routerState == RouterState.CheckBook) {
+            bibliotecaRouter.routerState = RouterState.MainMenu;
+            return new RouterMessage("", false, false);
+        }
+
+        throw new Exception("Invalid state!");
     }
 }

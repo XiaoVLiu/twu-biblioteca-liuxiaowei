@@ -2,10 +2,10 @@ package com.twu.biblioteca.model;
 
 public class Book {
 
-    public final String name;
+    private final String name;
     private final String author;
     private final int publishYear;
-    public boolean isChecked;
+    private boolean isChecked;
 
     public Book(String name, String author, int publishYear) {
         this.name = name;
@@ -23,5 +23,17 @@ public class Book {
 
     public String toString() {
         return "Name: " + this.name + ", Author: " + this.author + ", Publish Year: " + this.publishYear + "\n";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public boolean getIsChecked() {
+        return isChecked;
+    }
+
+    public void setIsChecked(boolean isChecked) {
+        this.isChecked = isChecked;
     }
 }
