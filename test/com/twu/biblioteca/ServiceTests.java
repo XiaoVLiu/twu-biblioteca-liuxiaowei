@@ -2,6 +2,8 @@ package com.twu.biblioteca;
 
 
 import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.router.BibliotecaRouter;
+import com.twu.biblioteca.router.RouterState;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,4 +38,10 @@ public class ServiceTests {
         assertEquals(books, new BibliotecaService(books).listAllBooks());
     }
 
+    @Test
+    public void should_display_welcome_message_when_current_state_is_initialize() {
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.Initialize, new BibliotecaService(null));
+
+        assertEquals("Welcome to Biblioteca!", bibliotecaRouter.getRouterMessage().text);
+    }
 }
