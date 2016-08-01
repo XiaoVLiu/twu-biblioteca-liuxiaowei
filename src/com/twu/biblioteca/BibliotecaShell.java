@@ -29,7 +29,6 @@ public class BibliotecaShell {
 
         String userInput = null;
         while (true) {
-
             RouterMessage routerMessage = bibliotecaRouter.getRouterMessage(userInput);
             out.println(routerMessage.getText());
 

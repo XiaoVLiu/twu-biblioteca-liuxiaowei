@@ -20,18 +20,25 @@ public class MainMenuHandler  implements IActionHandler{
     public RouterMessage handle(String userInput) {
         if (userInput == null) {
             return new RouterMessage(MainMenuString.getString(), true, false);
-        } else if (userInput.equals("1")) {
+        }
+
+        if (userInput.equals("1")) {
             return new RouterMessage(ModelExtension.toFormattedString(bibliotecaService.listAllBooks()), false, false);
-        } else if (userInput.equals("2")) {
+        }
+
+        if (userInput.equals("2")) {
             routerContext.setNextState(RouterState.CheckBook);
             return new RouterMessage("", true, false);
-        } else if (userInput.equals("3")) {
+        }
+
+        if (userInput.equals("3")) {
             routerContext.setNextState(RouterState.ReturnBook);
             return new RouterMessage("", true, false);
-        } else if (userInput.equals("4")) {
-            return new RouterMessage("", false, true);
-        } else {
-            return new RouterMessage("Select a valid option!", false, false);
         }
+        if (userInput.equals("4")) {
+            return new RouterMessage("", false, true);
+        }
+
+        return new RouterMessage("Select a valid option!", false, false);
     }
 }
