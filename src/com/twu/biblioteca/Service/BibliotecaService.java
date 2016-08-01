@@ -16,7 +16,15 @@ public class BibliotecaService {
     }
 
     public ArrayList<Book> listAllBooks() {
-        return allBooks;
+        ArrayList<Book> showBooks = new ArrayList<Book>();
+
+        for (Book book : allBooks) {
+            if (!book.isChecked) {
+                showBooks.add(book);
+            }
+        }
+
+        return showBooks;
     }
 
     public boolean checkoutBook(String checkoutBookName) {

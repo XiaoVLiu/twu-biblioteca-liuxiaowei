@@ -32,16 +32,11 @@ public class ServiceTests {
 
     @Test
     public void should_list_all_books_when_call_listAllBooks(){
-        ArrayList<Book> books = createBooks();
-
-        assertEquals(books, new BibliotecaService(books).listAllBooks());
-    }
-
-    public ArrayList<Book> createBooks() {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(new Book("Book 1", "Xiaowei Liu", 1991));
         books.add(new Book("Book 2", "Xiao Liu", 2001));
-        return books;
+
+        assertEquals(books, new BibliotecaService(books).listAllBooks());
     }
 
     @Test
@@ -69,5 +64,15 @@ public class ServiceTests {
         BibliotecaService bibliotecaService = new BibliotecaService(books);
 
         assertFalse(bibliotecaService.checkoutBook("Checked Book"));
+    }
+
+    @Test
+    public void should_list_unchecked_books_when_call_listAllBooks(){
+        ArrayList<Book> books = new ArrayList<Book>();
+        books.add(new Book("Book 1", "Author 1", 1, true));
+        books.add(new Book("Book 2", "Author 2", 2, false));
+        books.add(new Book("Book 3", "Author 3", 3, true));
+
+        assertEquals(books.subList(1, 2), new BibliotecaService(books).listAllBooks());
     }
 }
