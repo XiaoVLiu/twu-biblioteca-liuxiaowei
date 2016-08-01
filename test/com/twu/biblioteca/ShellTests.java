@@ -101,4 +101,14 @@ public class ShellTests {
 
         assertEquals("Thank you! Enjoy the book", bibliotecaRouter.getRouterMessage("Book").getText());
     }
+
+    @Test
+    public void should_display_not_available_message_when_user_input_an_invalid_book_name_in_checkout_book_state() throws Exception {
+        ArrayList<Book> books = new ArrayList<Book>();
+        books.add(new Book("Book", "Anthor", 1));
+
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, new BibliotecaService(books));
+
+        assertEquals("That book is not available.", bibliotecaRouter.getRouterMessage("Invalid Book").getText());
+    }
 }

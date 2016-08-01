@@ -37,8 +37,9 @@ public class BibliotecaRouter {
 
             if (bibliotecaService.checkoutBook(userInput)) {
                 return new RouterMessage("Thank you! Enjoy the book", false, false);
+            } else {
+                return new RouterMessage("That book is not available.", false, false);
             }
-            return new RouterMessage("", false, false);
         }
 
         throw new Exception("Invalid router state!");
