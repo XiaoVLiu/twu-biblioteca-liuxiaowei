@@ -24,6 +24,9 @@ public class BibliotecaRouter {
             if (userInput == "1") {
                 return new RouterMessage(ModelExtension.toFormattedString(bibliotecaService.listAllBooks()), false, false);
             } else if (userInput == "2") {
+                routerContext.setNextState(RouterState.CheckBook);
+                return new RouterMessage("", true, false);
+            } else if (userInput == "3") {
                 return new RouterMessage("", true, false);
             }
             else if (userInput == "4") {

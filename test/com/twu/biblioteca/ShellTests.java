@@ -121,4 +121,11 @@ public class ShellTests {
 
         assertEquals("That book is not available.", bibliotecaRouter.getRouterMessage("Book").getText());
     }
+
+    @Test
+    public void should_waiting_for_user_input_when_user_select_return_book_option_in_main_menu_state() throws Exception {
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(new ArrayList<Book>(0)));
+
+        assertTrue(bibliotecaRouter.getRouterMessage("3").getWaitForUserInput());
+    }
 }

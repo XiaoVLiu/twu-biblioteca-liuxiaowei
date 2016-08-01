@@ -14,4 +14,8 @@ public class RouterMessage {
     public String getText() {
         return text;
     }
+
+    public boolean getWaitForUserInput() {
+        return waitForInput;
+    }
 }
