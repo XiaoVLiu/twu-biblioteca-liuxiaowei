@@ -65,4 +65,10 @@ public class ShellTests {
 
         assertTrue(bibliotecaRouter.getRouterMessage("4").isExit);
     }
+
+    @Test
+    public void should_waiting_for_user_input_when_user_select_checkout_book_in_main_menu_state() throws Exception {
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, null);
+        assertTrue(bibliotecaRouter.getRouterMessage("2").waitForInput);
+    }
 }
