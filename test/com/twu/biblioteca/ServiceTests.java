@@ -47,7 +47,7 @@ public class ServiceTests {
     public void should_display_welcome_message_when_current_state_is_initialize() {
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.Initialize, new BibliotecaService(null));
 
-        assertEquals("Welcome to Biblioteca!", bibliotecaRouter.getRouterMessage(0).text);
+        assertEquals("Welcome to Biblioteca!", bibliotecaRouter.getRouterMessage(null).text);
     }
 
     @Test
@@ -68,6 +68,14 @@ public class ServiceTests {
         String expectedString = "Name: Book 1, Author: Xiaowei Liu, Publish Year: 1991\n" +
                 "Name: Book 2, Author: Xiao Liu, Publish Year: 2001\n";
 
-        assertEquals(expectedString, bibliotecaRouter.getRouterMessage(1).text);
+        assertEquals(expectedString, bibliotecaRouter.getRouterMessage("1").text);
+    }
+
+    @Test
+    public void should_return_invalid_message_when_user_not_select_list_books_in_main_menu_state() {
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(null));
+
+        String invalidMessage = "Select a valid option!";
+        assertEquals(invalidMessage, bibliotecaRouter.getRouterMessage("invalid option").text);
     }
 }

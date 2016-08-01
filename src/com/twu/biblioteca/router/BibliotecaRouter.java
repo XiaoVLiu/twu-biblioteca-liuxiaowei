@@ -14,16 +14,16 @@ public class BibliotecaRouter {
         this.bibliotecaService = bibliotecaService;
     }
 
-    public RouterMessage getRouterMessage(int option) {
+    public RouterMessage getRouterMessage(String option) {
         if (routerState == RouterState.Initialize) {
             return new RouterMessage("Welcome to Biblioteca!");
         }
         else if (routerState == RouterState.MainMenu) {
-            switch (option) {
-                case 1:
-                    return new RouterMessage(ModelExtension.toFormattedString(bibliotecaService.listAllBooks()));
-                default:
-                    return null;
+            if (option == "1") {
+                return new RouterMessage(ModelExtension.toFormattedString(bibliotecaService.listAllBooks()));
+            }
+            else {
+                return new RouterMessage("Select a valid option!");
             }
         }
 

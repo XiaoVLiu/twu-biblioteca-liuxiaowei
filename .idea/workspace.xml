@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccb0809a-008d-4d55-a05a-1017e886b2e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/model/Book.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/model/Book.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/router/BibliotecaRouter.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/router/BibliotecaRouter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/ServiceTests.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/ServiceTests.java" />
     </list>
@@ -49,10 +48,20 @@
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ServiceTests.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="350">
-              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+              <caret line="78" column="86" selection-start-line="78" selection-start-column="86" selection-end-line="78" selection-end-column="86" />
               <folding>
                 <element signature="e#1131#1137#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShellTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ShellTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -67,15 +76,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BibliotecaRouter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BibliotecaRouter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/router/BibliotecaRouter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="23" column="65" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
+            <state relative-caret-position="295">
+              <caret line="25" column="67" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1094#1095#0" expanded="true" />
-                <element signature="e#1143#1144#0" expanded="true" />
+                <element signature="e#1115#1116#0" expanded="true" />
+                <element signature="e#1164#1165#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,7 +131,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Book.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Book.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/model/Book.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -159,10 +168,10 @@
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/router/RouterMessage.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/source/MainMenuString" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/source/MainMenuString.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/ServiceTests.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/router/BibliotecaRouter.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/model/ModelExtension.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/model/Book.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/ServiceTests.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/router/BibliotecaRouter.java" />
       </list>
     </option>
   </component>
@@ -360,7 +369,7 @@
       <recent name="com.twu.biblioteca/service" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ServiceTests.should_return_invalid_message_when_user_not_select_list_books_in_main_menu_state">
     <configuration default="false" name="ServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -375,32 +384,6 @@
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.ServiceTests" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="ServiceTests.should_return_welcome_message_when_call_getWelcomeMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="biblioteca" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.ServiceTests" />
-      <option name="METHOD_NAME" value="should_return_welcome_message_when_call_getWelcomeMessage" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -478,6 +461,32 @@
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.ServiceTests" />
       <option name="METHOD_NAME" value="should_display_main_menu_when_current_state_is_main_menu" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ServiceTests.should_return_invalid_message_when_user_not_select_list_books_in_main_menu_state" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="biblioteca" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.ServiceTests" />
+      <option name="METHOD_NAME" value="should_return_invalid_message_when_user_not_select_list_books_in_main_menu_state" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -743,18 +752,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.ServiceTests" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_return_welcome_message_when_call_getWelcomeMessage" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_list_books_when_call_listAllBooks" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_display_welcome_message_when_current_state_is_initialize" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_display_main_menu_when_current_state_is_main_menu" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_list_books_when_call_listAllBooks" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_display_welcome_message_when_current_state_is_initialize" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_display_main_menu_when_current_state_is_main_menu" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_return_invalid_message_when_user_not_select_list_books_in_main_menu_state" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ServiceTests" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_display_main_menu_when_current_state_is_main_menu" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_display_welcome_message_when_current_state_is_initialize" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_list_books_when_call_listAllBooks" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_return_welcome_message_when_call_getWelcomeMessage" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_return_invalid_message_when_user_not_select_list_books_in_main_menu_state" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ServiceTests" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_display_main_menu_when_current_state_is_main_menu" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_display_welcome_message_when_current_state_is_initialize" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_list_books_when_call_listAllBooks" />
       </list>
     </recent_temporary>
   </component>
@@ -790,17 +799,17 @@
     <history-entry file="ServiceTests - 2016.08.01 at 16h 16m 48s.xml">
       <configuration name="ServiceTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ServiceTests_should_display_main_menu_when_current_state_is_main_menu - 2016.08.01 at 15h 20m 26s.xml">
-      <configuration name="ServiceTests.should_display_main_menu_when_current_state_is_main_menu" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ServiceTests_should_display_main_menu_when_current_state_is_main_menu - 2016.08.01 at 15h 25m 15s.xml">
       <configuration name="ServiceTests.should_display_main_menu_when_current_state_is_main_menu" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ServiceTests_should_display_main_menu_when_current_state_is_main_menu - 2016.08.01 at 15h 40m 49s.xml">
       <configuration name="ServiceTests.should_display_main_menu_when_current_state_is_main_menu" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ServiceTests_should_display_welcome_message_when_current_state_is_initialize - 2016.08.01 at 15h 25m 10s.xml">
-      <configuration name="ServiceTests.should_display_welcome_message_when_current_state_is_initialize" configurationId="JUnit" />
+    <history-entry file="ServiceTests_should_return_invalid_message_when_user_not_select_list_books_in_main_menu_state - 2016.08.01 at 16h 24m 19s.xml">
+      <configuration name="ServiceTests.should_return_invalid_message_when_user_not_select_list_books_in_main_menu_state" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ServiceTests_should_return_invalid_message_when_user_not_select_list_books_in_main_menu_state - 2016.08.01 at 16h 27m 07s.xml">
+      <configuration name="ServiceTests.should_return_invalid_message_when_user_not_select_list_books_in_main_menu_state" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -923,33 +932,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/router/BibliotecaRouter.java">
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/model/Book.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="23" column="65" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1094#1095#0" expanded="true" />
-            <element signature="e#1143#1144#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="225">
+          <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ShellTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ServiceTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <caret line="78" column="86" selection-start-line="78" selection-start-column="86" selection-end-line="78" selection-end-column="86" />
           <folding>
             <element signature="e#1131#1137#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/model/Book.java">
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/router/BibliotecaRouter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
-          <folding />
+        <state relative-caret-position="295">
+          <caret line="25" column="67" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1115#1116#0" expanded="true" />
+            <element signature="e#1164#1165#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
