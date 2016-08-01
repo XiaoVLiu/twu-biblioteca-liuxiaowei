@@ -20,19 +20,16 @@ public class BibliotecaRouter {
         else if (routerContext.getCurrentState() == RouterState.MainMenu) {
             if (userInput == null) {
                 return new RouterMessage(MainMenuString.getString(), true, false);
-            }
-            if (userInput == "1") {
+            } else if (userInput == "1") {
                 return new RouterMessage(ModelExtension.toFormattedString(bibliotecaService.listAllBooks()), false, false);
             } else if (userInput == "2") {
                 routerContext.setNextState(RouterState.CheckBook);
                 return new RouterMessage("", true, false);
             } else if (userInput == "3") {
                 return new RouterMessage("", true, false);
-            }
-            else if (userInput == "4") {
+            } else if (userInput == "4") {
                 return new RouterMessage("", false, true);
-            }
-            else {
+            } else {
                 return new RouterMessage("Select a valid option!", false, false);
             }
         } else if (routerContext.getCurrentState() == RouterState.CheckBook) {
@@ -43,6 +40,9 @@ public class BibliotecaRouter {
             } else {
                 return new RouterMessage("That book is not available.", false, false);
             }
+        } else if (routerContext.getCurrentState() == RouterState.ReturnBook) {
+            routerContext.setNextState(RouterState.MainMenu);
+            return new RouterMessage("", false, false);
         }
 
         throw new Exception("Invalid router state!");

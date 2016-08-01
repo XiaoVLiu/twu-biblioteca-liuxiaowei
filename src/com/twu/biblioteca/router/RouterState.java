@@ -1,5 +1,5 @@
 package com.twu.biblioteca.router;
 
 public enum RouterState {
-    MainMenu, CheckBook, Initialize
+    MainMenu, CheckBook, ReturnBook, Initialize
 }

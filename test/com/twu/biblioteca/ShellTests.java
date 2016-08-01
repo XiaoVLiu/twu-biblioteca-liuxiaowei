@@ -128,4 +128,12 @@ public class ShellTests {
 
         assertTrue(bibliotecaRouter.getRouterMessage("3").getWaitForUserInput());
     }
+
+    @Test
+    public void should_display_main_menu_when_continue_getRouterMessage_after_input_return_book_in_return_state() throws Exception {
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.ReturnBook, new BibliotecaService(new ArrayList<Book>(0)));
+        bibliotecaRouter.getRouterMessage("any book");
+
+        assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).text);
+    }
 }
