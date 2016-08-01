@@ -76,4 +76,19 @@ public class ShellTests {
 
         assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).text);
     }
+
+    @Test
+    public void should_display_all_unchecked_books_when_current_state_is_main_menu_and_user_select_list_books() throws Exception {
+        ArrayList<Book> books = new ArrayList<Book>();
+        books.add(new Book("Book 1", "Author 1", 1, true));
+        books.add(new Book("Book 2", "Author 2", 2, false));
+        books.add(new Book("Book 3", "Author 3", 3, false));
+
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(books));
+
+        String expectedString = "Name: Book 2, Author: Author 2, Publish Year: 2\n" +
+                "Name: Book 3, Author: Author 3, Publish Year: 3\n";
+
+        assertEquals(expectedString, bibliotecaRouter.getRouterMessage("1").text);
+    }
 }
