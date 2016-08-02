@@ -49,6 +49,11 @@ public class MainMenuHandler  implements IActionHandler{
             return new RouterMessage("", true, false);
         }
 
+        if (userInput.equals("6")) {
+            routerContext.setNextState(RouterState.Login);
+            return new RouterMessage("", true, false);
+        }
+
         return new RouterMessage("Select a valid option!", false, false);
     }
 }

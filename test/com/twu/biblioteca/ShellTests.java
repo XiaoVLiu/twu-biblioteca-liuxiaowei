@@ -191,4 +191,9 @@ public class ShellTests {
 
         assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).getText());
     }
+
+    @Test
+    public void should_wait_for_input_when_select_login_in_main_menu() throws Exception {
+        assertTrue(new BibliotecaRouter(RouterState.MainMenu, null).getRouterMessage("6").getWaitForUserInput());
+    }
 }
