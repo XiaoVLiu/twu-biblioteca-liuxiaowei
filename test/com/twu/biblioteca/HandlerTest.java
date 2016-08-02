@@ -6,7 +6,7 @@ import org.junit.Test;
 import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertTrue;
 
-public class LoginHandlerTest {
+public class HandlerTest {
     @Test
     public void should_return_false_when_login_and_input_an_invalid_library_number() {
         assertFalse(LoginHandler.validateUser("invalid library number", ""));
