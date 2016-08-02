@@ -5,12 +5,14 @@ public class Movie {
     private final int year;
     private final String director;
     private final int rate;
+    private boolean isChecked;
 
-    public Movie(String name, int year, String director, int rate) {
+    public Movie(String name, int year, String director, int rate, boolean isChecked) {
         this.name = name;
         this.year = year;
         this.director = director;
         this.rate = rate;
+        this.isChecked = isChecked;
     }
 
     public String getName() {
@@ -27,5 +29,9 @@ public class Movie {
 
     public int getRate() {
         return rate;
+    }
+
+    public boolean getIsChecked() {
+        return isChecked;
     }
 }

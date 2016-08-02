@@ -14,7 +14,6 @@ public class Book {
     }
 
     public Book(String name, String author, int publishYear, boolean isChecked) {
-
         this.name = name;
         this.author = author;
         this.publishYear = publishYear;

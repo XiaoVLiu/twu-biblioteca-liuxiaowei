@@ -101,8 +101,8 @@ public class ServiceTests {
     @Test
     public void should_return_all_movies_when_call_list_movies() {
         ArrayList<Movie> movies = new ArrayList<Movie>();
-        movies.add(new Movie("Movie 1", 1, "Director 1", 5));
-        movies.add(new Movie("Movie 2", 2, "Director 2", 8));
+        movies.add(new Movie("Movie 1", 1, "Director 1", 5, false));
+        movies.add(new Movie("Movie 2", 2, "Director 2", 8, false));
 
         assertEquals(movies, new BibliotecaService(null, movies).listAllMovies());
     }
@@ -110,8 +110,21 @@ public class ServiceTests {
     @Test
     public void should_return_true_when_checkout_a_valid_movie_name() {
         ArrayList<Movie> movies = new ArrayList<Movie>();
-        movies.add(new Movie("Movie", 1, "Director", 5));
+        movies.add(new Movie("Movie", 1, "Director", 5, false));
 
         assertTrue(new BibliotecaService(null, movies).checkoutMovie("Movie"));
+    }
+
+    @Test
+    public void should_return_false_when_checkout_a_checked_movie_name() {
+        ArrayList<Movie> movies = new ArrayList<Movie>();
+        movies.add(new Movie("Movie", 1, "Director", 5, true));
+
+        assertFalse(new BibliotecaService(null, movies).checkoutMovie("Movie"));
+    }
+
+    @Test
+    public void should_return_false_when_checkout_a_not_exist_movie_name() {
+        assertFalse(new BibliotecaService(null, new ArrayList<Movie>(0)).checkoutMovie("Movie"));
     }
 }

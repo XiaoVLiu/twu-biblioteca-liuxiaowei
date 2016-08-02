@@ -58,7 +58,7 @@ public class BibliotecaService {
 
     public boolean checkoutMovie(String checkoutMovieName) {
         for (Movie movie : allMovies) {
-            if (movie.getName().equals(checkoutMovieName)) {
+            if (movie.getName().equals(checkoutMovieName) && !movie.getIsChecked()) {
                 return true;
             }
         }
