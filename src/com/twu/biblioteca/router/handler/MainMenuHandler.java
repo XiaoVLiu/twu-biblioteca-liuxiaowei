@@ -69,6 +69,10 @@ public class MainMenuHandler  implements IActionHandler{
         }
 
         if (userInput.equals("7")) {
+            if (bibliotecaService.getCurrentUser() == null) {
+                return new RouterMessage("Not available option!", false, false);
+            }
+
             return new RouterMessage(ModelExtension.toFormattedString(bibliotecaService.getCurrentUser()), false, false);
         }
 

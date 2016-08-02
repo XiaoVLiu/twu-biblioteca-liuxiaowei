@@ -264,4 +264,12 @@ public class ShellTests {
 
         assertEquals(MainMenuString.getStringWithUserInfo(), bibliotecaRouter.getRouterMessage(null).getText());
     }
+
+    @Test
+    public void should_display_invalid_option_when_select_userInfo_in_main_menu_but_unlogged() throws Exception {
+        BibliotecaService bibliotecaService = new BibliotecaService(null, null);
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, bibliotecaService);
+
+        assertEquals("Not available option!", bibliotecaRouter.getRouterMessage("7").getText());
+    }
 }
