@@ -29,6 +29,8 @@ public class BibliotecaRouter {
                 return new ReturnBookHandler(routerContext, bibliotecaService);
             case CheckMovie:
                 return new CheckMovieHandler(routerContext, bibliotecaService);
+            case Login:
+                return new LoginHandler(routerContext, bibliotecaService);
         }
 
         throw new Exception("Invalid router state!");

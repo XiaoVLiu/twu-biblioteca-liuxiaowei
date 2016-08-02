@@ -196,4 +196,12 @@ public class ShellTests {
     public void should_wait_for_input_when_select_login_in_main_menu() throws Exception {
         assertTrue(new BibliotecaRouter(RouterState.MainMenu, null).getRouterMessage("6").getWaitForUserInput());
     }
+
+    @Test
+    public void should_display_main_menu_when_continue_getRouterMessage_after_login() throws Exception {
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.Login, new BibliotecaService(null, null));
+        bibliotecaRouter.getRouterMessage("library number and password");
+
+        assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).getText());
+    }
 }
