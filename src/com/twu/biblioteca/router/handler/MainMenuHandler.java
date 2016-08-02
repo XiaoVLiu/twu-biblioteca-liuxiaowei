@@ -37,6 +37,11 @@ public class MainMenuHandler  implements IActionHandler{
         }
 
         if (userInput.equals("3")) {
+            if (bibliotecaService.getCurrentUser() == null) {
+                routerContext.setNextState(RouterState.Login);
+                return new RouterMessage("please login!", true, false);
+            }
+
             routerContext.setNextState(RouterState.ReturnBook);
             return new RouterMessage("", true, false);
         }

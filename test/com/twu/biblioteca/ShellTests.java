@@ -4,6 +4,7 @@ import com.twu.biblioteca.Service.BibliotecaService;
 import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.model.Movie;
 import com.twu.biblioteca.router.BibliotecaRouter;
+import com.twu.biblioteca.router.RouterMessage;
 import com.twu.biblioteca.router.RouterState;
 import com.twu.biblioteca.router.MainMenuString;
 import org.junit.Test;
@@ -209,6 +210,19 @@ public class ShellTests {
     public void should_display_please_login_when_select_checkout_in_main_menu_but_not_login() throws Exception {
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(null, null));
 
-        assertEquals("please login!", bibliotecaRouter.getRouterMessage("2").getText());
+        RouterMessage routerMessage = bibliotecaRouter.getRouterMessage("2");
+
+        assertEquals("please login!", routerMessage.getText());
+        assertTrue(routerMessage.getWaitForUserInput());
+    }
+
+    @Test
+    public void should_display_please_login_when_select_return_book_in_main_menu_but_not_login() throws Exception {
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(null, null));
+
+        RouterMessage routerMessage = bibliotecaRouter.getRouterMessage("3");
+
+        assertEquals("please login!", routerMessage.getText());
+        assertTrue(routerMessage.getWaitForUserInput());
     }
 }
