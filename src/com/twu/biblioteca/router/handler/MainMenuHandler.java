@@ -44,6 +44,11 @@ public class MainMenuHandler  implements IActionHandler{
             return new RouterMessage(ModelExtension.toFormattedString(bibliotecaService.listAllMovies()), false, false);
         }
 
+        if (userInput.equals("5")) {
+            routerContext.setNextState(RouterState.CheckMovie);
+            return new RouterMessage("", true, false);
+        }
+
         return new RouterMessage("Select a valid option!", false, false);
     }
 }

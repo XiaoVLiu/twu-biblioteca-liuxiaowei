@@ -178,4 +178,9 @@ public class ShellTests {
 
         assertEquals(expectedString, bibliotecaRouter.getRouterMessage("4").getText());
     }
+
+    @Test
+    public void should_wait_for_input_when_select_cheout_movies_in_main_menu() throws Exception {
+        assertTrue(new BibliotecaRouter(RouterState.MainMenu, null).getRouterMessage("5").getWaitForUserInput());
+    }
 }
