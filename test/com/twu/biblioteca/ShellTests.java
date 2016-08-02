@@ -253,4 +253,15 @@ public class ShellTests {
         String userInfo = "Library Number: 001-0000, Name: name, Email Address: hi@thoughtworks.com, Phone Number: 123456\n";
         assertEquals(userInfo, routerMessage.getText());
     }
+
+    @Test
+    public void should_display_main_menu_when_continue_getRouterMessage_after_show_userInfo_in_main_menu() throws Exception {
+        BibliotecaService bibliotecaService = new BibliotecaService(null, null);
+        bibliotecaService.setCurrentUser("001-0000");
+
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, bibliotecaService);
+        bibliotecaRouter.getRouterMessage("7");
+
+        assertEquals(MainMenuString.getStringWithUserInfo(), bibliotecaRouter.getRouterMessage(null).getText());
+    }
 }
