@@ -39,11 +39,10 @@ public class LoginHandler implements IActionHandler{
         routerContext.setNextState(RouterState.MainMenu);
         String[] split = userInput.trim().split(" ", 2);
 
-        if (split.length != 2 || !validateUser(split[0], split[1])) {
-            return new RouterMessage("", false, false);
+        if (split.length == 2 && validateUser(split[0], split[1])) {
+            bibliotecaService.setCurrentUser(split[0]);
         }
 
-        bibliotecaService.setCurrentUser(split[0]);
         return new RouterMessage("", false, false);
     }
 }
