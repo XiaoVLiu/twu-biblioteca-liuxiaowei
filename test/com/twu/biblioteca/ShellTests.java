@@ -33,7 +33,7 @@ public class ShellTests {
         books.add(new Book("Book 1", "Xiaowei Liu", 1991));
         books.add(new Book("Book 2", "Xiao Liu", 2001));
 
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(books));
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(books, null));
 
         String expectedString = "Name: Book 1, Author: Xiaowei Liu, Publish Year: 1991\n" +
                 "Name: Book 2, Author: Xiao Liu, Publish Year: 2001\n";
@@ -71,7 +71,7 @@ public class ShellTests {
 
     @Test
     public void should_display_main_menu_when_continue_getRouterMessage_after_input_check_book_in_check_out_state() throws Exception {
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, new BibliotecaService(new ArrayList<Book>(0)));
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, new BibliotecaService(new ArrayList<Book>(0), null));
         bibliotecaRouter.getRouterMessage("any book");
 
         assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).getText());
@@ -84,7 +84,7 @@ public class ShellTests {
         books.add(new Book("Book 2", "Author 2", 2, false));
         books.add(new Book("Book 3", "Author 3", 3, false));
 
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(books));
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(books, null));
 
         String expectedString = "Name: Book 2, Author: Author 2, Publish Year: 2\n" +
                 "Name: Book 3, Author: Author 3, Publish Year: 3\n";
@@ -97,7 +97,7 @@ public class ShellTests {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(new Book("Book", "Anthor", 1));
 
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, new BibliotecaService(books));
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, new BibliotecaService(books, null));
 
         assertEquals("Thank you! Enjoy the book", bibliotecaRouter.getRouterMessage("Book").getText());
     }
@@ -107,7 +107,7 @@ public class ShellTests {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(new Book("Book", "Anthor", 1));
 
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, new BibliotecaService(books));
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, new BibliotecaService(books, null));
 
         assertEquals("That book is not available.", bibliotecaRouter.getRouterMessage("Invalid Book").getText());
     }
@@ -117,21 +117,21 @@ public class ShellTests {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(new Book("Book", "Anthor", 1, true));
 
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, new BibliotecaService(books));
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, new BibliotecaService(books, null));
 
         assertEquals("That book is not available.", bibliotecaRouter.getRouterMessage("Book").getText());
     }
 
     @Test
     public void should_waiting_for_user_input_when_user_select_return_book_option_in_main_menu_state() throws Exception {
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(new ArrayList<Book>(0)));
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(new ArrayList<Book>(0), null));
 
         assertTrue(bibliotecaRouter.getRouterMessage("3").getWaitForUserInput());
     }
 
     @Test
     public void should_display_main_menu_when_continue_getRouterMessage_after_input_return_book_in_return_state() throws Exception {
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.ReturnBook, new BibliotecaService(new ArrayList<Book>(0)));
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.ReturnBook, new BibliotecaService(new ArrayList<Book>(0), null));
         bibliotecaRouter.getRouterMessage("any book");
 
         assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).getText());
@@ -142,7 +142,7 @@ public class ShellTests {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(new Book("Book", "Anthor", 1, true));
 
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.ReturnBook, new BibliotecaService(books));
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.ReturnBook, new BibliotecaService(books, null));
 
         assertEquals("Thank you for returning the book.", bibliotecaRouter.getRouterMessage("Book").getText());
     }
@@ -152,7 +152,7 @@ public class ShellTests {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(new Book("Unchecked Book", "Anthor", 1, false));
 
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.ReturnBook, new BibliotecaService(books));
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.ReturnBook, new BibliotecaService(books, null));
 
         assertEquals("That is not a valid book to return.", bibliotecaRouter.getRouterMessage("Unchecked Book").getText());
     }
@@ -160,7 +160,7 @@ public class ShellTests {
     @Test
     public void should_display_failed_message_when_user_input_not_exist_book_in_return_book_state() throws Exception {
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.ReturnBook,
-                new BibliotecaService(new ArrayList<Book>(0)));
+                new BibliotecaService(new ArrayList<Book>(0), null));
 
         assertEquals("That is not a valid book to return.", bibliotecaRouter.getRouterMessage("Not Exist Book").getText());
     }

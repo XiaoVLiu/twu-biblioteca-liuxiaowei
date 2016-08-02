@@ -3,6 +3,7 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.Service.BibliotecaService;
 import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.Movie;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,14 +37,14 @@ public class ServiceTests {
         books.add(new Book("Book 1", "Xiaowei Liu", 1991));
         books.add(new Book("Book 2", "Xiao Liu", 2001));
 
-        assertEquals(books, new BibliotecaService(books).listAllBooks());
+        assertEquals(books, new BibliotecaService(books, null).listAllBooks());
     }
 
     @Test
     public void should_return_true_when_book_is_unchecked_and_exist() {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(new Book("Book", "Author", 1));
-        BibliotecaService bibliotecaService = new BibliotecaService(books);
+        BibliotecaService bibliotecaService = new BibliotecaService(books, null);
 
         assertTrue(bibliotecaService.checkoutBook("Book"));
     }
@@ -52,7 +53,7 @@ public class ServiceTests {
     public void should_return_false_when_book_is_not_exist() {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(new Book("Book", "Author", 1));
-        BibliotecaService bibliotecaService = new BibliotecaService(books);
+        BibliotecaService bibliotecaService = new BibliotecaService(books, null);
 
         assertFalse(bibliotecaService.checkoutBook("Invalid Book"));
     }
@@ -61,7 +62,7 @@ public class ServiceTests {
     public void should_return_false_when_book_is_checked_out() {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(new Book("Checked Book", "Author", 1, true));
-        BibliotecaService bibliotecaService = new BibliotecaService(books);
+        BibliotecaService bibliotecaService = new BibliotecaService(books, null);
 
         assertFalse(bibliotecaService.checkoutBook("Checked Book"));
     }
@@ -73,7 +74,7 @@ public class ServiceTests {
         books.add(new Book("Book 2", "Author 2", 2, false));
         books.add(new Book("Book 3", "Author 3", 3, true));
 
-        assertEquals(books.subList(1, 2), new BibliotecaService(books).listAllBooks());
+        assertEquals(books.subList(1, 2), new BibliotecaService(books, null).listAllBooks());
     }
 
     @Test
@@ -81,7 +82,7 @@ public class ServiceTests {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(new Book("Checked Book", "Author", 1, true));
 
-        assertTrue(new BibliotecaService(books).returnBook("Checked Book"));
+        assertTrue(new BibliotecaService(books, null).returnBook("Checked Book"));
     }
 
     @Test
@@ -89,11 +90,20 @@ public class ServiceTests {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(new Book("Unchecked Book", "Author", 1, false));
 
-        assertFalse(new BibliotecaService(books).returnBook("Unchecked Book"));
+        assertFalse(new BibliotecaService(books, null).returnBook("Unchecked Book"));
     }
 
     @Test
     public void should_return_false_when_return_a_not_exist_book() {
-        assertFalse(new BibliotecaService(new ArrayList<Book>(0)).returnBook("Not Exist Book"));
+        assertFalse(new BibliotecaService(new ArrayList<Book>(0), null).returnBook("Not Exist Book"));
+    }
+
+    @Test
+    public void should_return_all_movies_when_call_list_movies() {
+        ArrayList<Movie> movies = new ArrayList<Movie>();
+        movies.add(new Movie("Movie 1", 1, "Director 1", 5));
+        movies.add(new Movie("Movie 2", 2, "Director 2", 8));
+
+        assertEquals(movies, new BibliotecaService(null, movies).listAllMovies());
     }
 }

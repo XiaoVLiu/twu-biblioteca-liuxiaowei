@@ -25,7 +25,7 @@ public class BibliotecaShell {
         books.add(new Book("Book 1", "Author 1", 1));
         books.add(new Book("Book 2", "Author 2", 2));
         books.add(new Book("Book 3", "Author 3", 3));
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.Initialize, new BibliotecaService(books));
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.Initialize, new BibliotecaService(books, null));
 
         String userInput = null;
         while (true) {

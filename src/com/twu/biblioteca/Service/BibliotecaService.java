@@ -1,14 +1,17 @@
 package com.twu.biblioteca.Service;
 
 import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.Movie;
 
 import java.util.ArrayList;
 
 public class BibliotecaService {
     private ArrayList<Book> allBooks;
+    private ArrayList<Movie> allMovies;
 
-    public BibliotecaService(ArrayList<Book> allBooks) {
+    public BibliotecaService(ArrayList<Book> allBooks, ArrayList<Movie> allMovies) {
         this.allBooks = allBooks;
+        this.allMovies = allMovies;
     }
 
     public static String getWelcomeMessage() {
@@ -47,5 +50,9 @@ public class BibliotecaService {
         }
 
         return false;
+    }
+
+    public ArrayList<Movie> listAllMovies() {
+        return allMovies;
     }
 }
