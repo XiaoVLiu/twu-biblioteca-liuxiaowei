@@ -36,11 +36,11 @@ public class MainMenuHandler  implements IActionHandler{
             return new RouterMessage("", true, false);
         }
 
-        if (userInput.equals("4")) {
+        if (userInput.equals("q")) {
             return new RouterMessage("", false, true);
         }
 
-        if (userInput.equals("5")) {
+        if (userInput.equals("4")) {
             return new RouterMessage(ModelExtension.toFormattedString(bibliotecaService.listAllMovies()), false, false);
         }
 

@@ -61,7 +61,7 @@ public class ShellTests {
     public void should_quit_when_user_select_quit_option_and_current_state_is_main_menu() throws Exception {
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, null);
 
-        assertTrue(bibliotecaRouter.getRouterMessage("4").getIsExit());
+        assertTrue(bibliotecaRouter.getRouterMessage("q").getIsExit());
     }
 
     @Test
@@ -176,6 +176,6 @@ public class ShellTests {
         String expectedString = "Name: Movie 1, Year: 1, Director: Director 1, Rate: 5\n" +
                 "Name: Movie 2, Year: 2, Director: Director 2, Rate: 8\n" ;
 
-        assertEquals(expectedString, bibliotecaRouter.getRouterMessage("5").getText());
+        assertEquals(expectedString, bibliotecaRouter.getRouterMessage("4").getText());
     }
 }

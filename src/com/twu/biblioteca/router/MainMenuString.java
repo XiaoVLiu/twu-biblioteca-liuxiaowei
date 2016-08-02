@@ -7,7 +7,8 @@ public class MainMenuString {
                     "1. List Books\n" +
                     "2. Checkout Book\n" +
                     "3. Return Book\n" +
-                    "4. Quit\n" +
+                    "4. List Movies" +
+                    "q. Quit\n" +
                     "*********************************\n";
 
     public static String getString() {

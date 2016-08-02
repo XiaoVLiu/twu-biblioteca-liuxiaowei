@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccb0809a-008d-4d55-a05a-1017e886b2e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Service/BibliotecaService.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Service/BibliotecaService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/ServiceTests.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/ServiceTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/router/MainMenuString.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/router/MainMenuString.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/router/handler/MainMenuHandler.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/router/handler/MainMenuHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/ShellTests.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/ShellTests.java" />
     </list>
     <ignored path="biblioteca.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServiceTests.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ServiceTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ServiceTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="114" column="66" selection-start-line="114" selection-start-column="66" selection-end-line="114" selection-end-column="66" />
+            <state relative-caret-position="430">
+              <caret line="111" column="57" selection-start-line="111" selection-start-column="57" selection-end-line="111" selection-end-column="57" />
               <folding>
                 <element signature="e#3596#3603#0" expanded="true" />
                 <element signature="e#3951#3958#0" expanded="true" />
@@ -65,7 +66,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShellTests.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ShellTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ShellTests.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2505">
@@ -80,8 +81,8 @@
       <file leaf-file-name="MainMenuHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/router/handler/MainMenuHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="43" column="62" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
+            <state relative-caret-position="423">
+              <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -91,10 +92,10 @@
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/router/MainMenuString.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+              <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
               <folding>
-                <element signature="e#423#424#0" expanded="true" />
-                <element signature="e#460#461#0" expanded="true" />
+                <element signature="e#462#463#0" expanded="true" />
+                <element signature="e#499#500#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -173,13 +174,13 @@
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/router/handler/CheckBookHandler.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/model/Book.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaShell.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/router/MainMenuString.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/ShellTests.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/router/handler/MainMenuHandler.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/model/Movie.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/model/ModelExtension.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/ServiceTests.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Service/BibliotecaService.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/router/MainMenuString.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/router/handler/MainMenuHandler.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/ShellTests.java" />
       </list>
     </option>
   </component>
@@ -382,7 +383,7 @@
       <recent name="com.twu.biblioteca.source" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ServiceTests.should_return_true_when_checkout_a_valid_movie_name">
+  <component name="RunManager" selected="JUnit.ShellTests">
     <configuration default="false" name="ServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -772,10 +773,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_return_true_when_checkout_a_valid_movie_name" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ServiceTests" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ShellTests" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ShellTests.should_display_all_movies_when_select_list_movies_in_main_menu" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ShellTests" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ShellTests.should_display_all_movies_when_select_list_movies_in_main_menu" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_return_true_when_checkout_a_valid_movie_name" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ServiceTests" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.ServiceTests.should_return_all_movies_when_call_list_movies" />
       </list>
     </recent_temporary>
@@ -815,17 +816,17 @@
     <history-entry file="ShellTests - 2016.08.02 at 15h 37m 58s.xml">
       <configuration name="ShellTests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ShellTests - 2016.08.02 at 15h 54m 08s.xml">
+      <configuration name="ShellTests" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="ShellTests_should_display_all_movies_when_select_list_movies_in_main_menu - 2016.08.02 at 15h 04m 11s.xml">
       <configuration name="ShellTests.should_display_all_movies_when_select_list_movies_in_main_menu" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ShellTests_should_display_all_movies_when_select_list_movies_in_main_menu - 2016.08.02 at 15h 37m 47s.xml">
       <configuration name="ShellTests.should_display_all_movies_when_select_list_movies_in_main_menu" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ShellTests_should_waiting_for_user_input_when_user_select_return_book_option_in_main_menu_state - 2016.08.01 at 23h 33m 43s.xml">
-      <configuration name="ShellTests.should_waiting_for_user_input_when_user_select_return_book_option_in_main_menu_state" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ShellTests_should_waiting_for_user_input_when_user_select_return_book_option_in_main_menu_state - 2016.08.01 at 23h 33m 48s.xml">
-      <configuration name="ShellTests.should_waiting_for_user_input_when_user_select_return_book_option_in_main_menu_state" configurationId="JUnit" />
+    <history-entry file="ShellTests_should_display_all_movies_when_select_list_movies_in_main_menu - 2016.08.02 at 15h 54m 02s.xml">
+      <configuration name="ShellTests.should_display_all_movies_when_select_list_movies_in_main_menu" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -1075,17 +1076,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/router/MainMenuString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding>
-            <element signature="e#423#424#0" expanded="true" />
-            <element signature="e#460#461#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/model/Movie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
@@ -1120,30 +1110,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/router/handler/MainMenuHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="43" column="62" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/model/ModelExtension.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ShellTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2505">
-          <caret line="178" column="73" selection-start-line="178" selection-start-column="73" selection-end-line="178" selection-end-column="73" />
-          <folding>
-            <element signature="e#8241#8248#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1160,13 +1132,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/router/MainMenuString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding>
+            <element signature="e#462#463#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ServiceTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="114" column="66" selection-start-line="114" selection-start-column="66" selection-end-line="114" selection-end-column="66" />
+        <state relative-caret-position="430">
+          <caret line="111" column="57" selection-start-line="111" selection-start-column="57" selection-end-line="111" selection-end-column="57" />
           <folding>
             <element signature="e#3596#3603#0" expanded="true" />
             <element signature="e#3951#3958#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/router/handler/MainMenuHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ShellTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2505">
+          <caret line="178" column="73" selection-start-line="178" selection-start-column="73" selection-end-line="178" selection-end-column="73" />
+          <folding>
+            <element signature="e#8241#8248#0" expanded="true" />
           </folding>
         </state>
       </provider>
