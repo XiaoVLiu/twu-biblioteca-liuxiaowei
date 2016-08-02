@@ -66,7 +66,7 @@ public class ShellTests {
 
     @Test
     public void should_waiting_for_user_input_when_user_select_checkout_book_in_main_menu_state() throws Exception {
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, null);
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(null, null));
         assertTrue(bibliotecaRouter.getRouterMessage("2").getWaitForUserInput());
     }
 
@@ -198,10 +198,17 @@ public class ShellTests {
     }
 
     @Test
-    public void should_display_main_menu_when_continue_getRouterMessage_after_login() throws Exception {
+    public void should_display_main_menu_when_continue_getRouterMessage_after_input_library_number_and_password_in_login() throws Exception {
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.Login, new BibliotecaService(null, null));
         bibliotecaRouter.getRouterMessage("library number and password");
 
         assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).getText());
+    }
+
+    @Test
+    public void should_display_please_login_when_select_checkout_in_main_menu_but_not_login() throws Exception {
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(null, null));
+
+        assertEquals("please login!", bibliotecaRouter.getRouterMessage("2").getText());
     }
 }

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class BibliotecaService {
     private ArrayList<Book> allBooks;
     private ArrayList<Movie> allMovies;
+    private String currentUser = null;
 
     public BibliotecaService(ArrayList<Book> allBooks, ArrayList<Movie> allMovies) {
         this.allBooks = allBooks;
@@ -64,5 +65,9 @@ public class BibliotecaService {
         }
 
         return false;
+    }
+
+    public String getCurrentUser() {
+        return currentUser;
     }
 }
