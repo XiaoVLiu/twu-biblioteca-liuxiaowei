@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.Service.BibliotecaService;
 import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.Movie;
 import com.twu.biblioteca.router.BibliotecaRouter;
 import com.twu.biblioteca.router.RouterMessage;
 import com.twu.biblioteca.router.RouterState;
@@ -25,7 +26,12 @@ public class BibliotecaShell {
         books.add(new Book("Book 1", "Author 1", 1));
         books.add(new Book("Book 2", "Author 2", 2));
         books.add(new Book("Book 3", "Author 3", 3));
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.Initialize, new BibliotecaService(books, null));
+
+        ArrayList<Movie> movies = new ArrayList<Movie>();
+        movies.add(new Movie("Movie 1", 1, "Director 1", 5));
+        movies.add(new Movie("Movie 2", 2, "Director 2", 8));
+
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.Initialize, new BibliotecaService(books, movies));
 
         String userInput = null;
         while (true) {

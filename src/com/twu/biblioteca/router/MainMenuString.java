@@ -7,8 +7,8 @@ public class MainMenuString {
             "2. Checkout Book\n" +
             "3. Return Book\n" +
             "4. List Movies\n" +
-            "5. Checkout Movie" +
-            "6. Login";
+            "5. Checkout Movie\n" +
+            "6. Login\n";
     private static final String MAIN_MENU_FOOTER = "q. Quit\n" +
             "*********************************\n";
     private static final String MAIN_MENU_OPTIONAL = "7. User Information\n";

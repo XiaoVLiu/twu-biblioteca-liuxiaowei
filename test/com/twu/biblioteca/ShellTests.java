@@ -177,8 +177,8 @@ public class ShellTests {
     @Test
     public void should_display_all_movies_when_select_list_movies_in_main_menu() throws Exception {
         ArrayList<Movie> movies = new ArrayList<Movie>();
-        movies.add(new Movie("Movie 1", 1, "Director 1", 5, false));
-        movies.add(new Movie("Movie 2", 2, "Director 2", 8, false));
+        movies.add(new Movie("Movie 1", 1, "Director 1", 5));
+        movies.add(new Movie("Movie 2", 2, "Director 2", 8));
         BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(null, movies));
 
         String expectedString = "Name: Movie 1, Year: 1, Director: Director 1, Rate: 5\n" +

@@ -15,6 +15,13 @@ public class Movie {
         this.isChecked = isChecked;
     }
 
+    public Movie(String name, int year, String director, int rate) {
+        this.name = name;
+        this.year = year;
+        this.director = director;
+        this.rate = rate;
+    }
+
     public String getName() {
         return name;
     }
