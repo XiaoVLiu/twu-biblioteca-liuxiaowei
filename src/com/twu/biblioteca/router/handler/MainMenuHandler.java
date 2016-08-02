@@ -68,6 +68,10 @@ public class MainMenuHandler  implements IActionHandler{
             return new RouterMessage("", true, false);
         }
 
+        if (userInput.equals("7")) {
+            return new RouterMessage(ModelExtension.toFormattedString(bibliotecaService.getCurrentUser()), false, false);
+        }
+
         return new RouterMessage("Select a valid option!", false, false);
     }
 }

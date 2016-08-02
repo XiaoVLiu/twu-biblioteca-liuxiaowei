@@ -1,5 +1,7 @@
 package com.twu.biblioteca.model;
 
+import com.twu.biblioteca.fixtures.UserFixture;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,5 +24,15 @@ public class ModelExtension {
         }
 
         return result;
+    }
+
+    public static String toFormattedString(String currentUserLibraryNumber) {
+        UserInfo userInfo = UserFixture.loadAllUsers().get(currentUserLibraryNumber);
+
+        return "Library Number: " + userInfo.getLibraryNumber() +
+                ", Name: " + userInfo.getName() +
+                ", Email Address: " + userInfo.getEmail() +
+                ", Phone Number: " + userInfo.getPhoneNumber() +
+                "\n";
     }
 }

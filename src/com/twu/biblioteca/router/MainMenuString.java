@@ -6,10 +6,12 @@ public class MainMenuString {
     private static final String MAIN_MENU_NECESSARY = "1. List Books\n" +
             "2. Checkout Book\n" +
             "3. Return Book\n" +
-            "4. List Movies\n";
+            "4. List Movies\n" +
+            "5. Checkout Movie" +
+            "6. Login";
     private static final String MAIN_MENU_FOOTER = "q. Quit\n" +
             "*********************************\n";
-    private static final String MAIN_MENU_OPTIONAL = "5. User Information\n";
+    private static final String MAIN_MENU_OPTIONAL = "7. User Information\n";
 
     public static String getString() {
         return MAIN_MENU_HEADER + MAIN_MENU_NECESSARY + MAIN_MENU_FOOTER;
