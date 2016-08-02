@@ -106,4 +106,12 @@ public class ServiceTests {
 
         assertEquals(movies, new BibliotecaService(null, movies).listAllMovies());
     }
+
+    @Test
+    public void should_return_true_when_checkout_a_valid_movie_name() {
+        ArrayList<Movie> movies = new ArrayList<Movie>();
+        movies.add(new Movie("Movie", 1, "Director", 5));
+
+        assertTrue(new BibliotecaService(null, movies).checkoutMovie("Movie"));
+    }
 }

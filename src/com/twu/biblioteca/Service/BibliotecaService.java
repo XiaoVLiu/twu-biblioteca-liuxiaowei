@@ -55,4 +55,14 @@ public class BibliotecaService {
     public ArrayList<Movie> listAllMovies() {
         return allMovies;
     }
+
+    public boolean checkoutMovie(String checkoutMovieName) {
+        for (Movie movie : allMovies) {
+            if (movie.getName().equals(checkoutMovieName)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
