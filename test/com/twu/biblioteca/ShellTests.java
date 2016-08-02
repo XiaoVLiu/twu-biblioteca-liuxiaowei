@@ -99,7 +99,9 @@ public class ShellTests {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(new Book("Book", "Anthor", 1));
 
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, new BibliotecaService(books, null));
+        BibliotecaService bibliotecaService = new BibliotecaService(books, null);
+        bibliotecaService.setCurrentUser("any user");
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckBook, bibliotecaService);
 
         assertEquals("Thank you! Enjoy the book", bibliotecaRouter.getRouterMessage("Book").getText());
     }
@@ -142,9 +144,14 @@ public class ShellTests {
     @Test
     public void should_display_successful_message_when_user_input_a_valid_book_in_return_book_state() throws Exception {
         ArrayList<Book> books = new ArrayList<Book>();
-        books.add(new Book("Book", "Anthor", 1, true));
+        Book book = new Book("Book", "Anthor", 1, true);
+        book.setCheckedUser("any user");
+        books.add(book);
 
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.ReturnBook, new BibliotecaService(books, null));
+        BibliotecaService bibliotecaService = new BibliotecaService(books, null);
+        bibliotecaService.setCurrentUser("any user");
+
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.ReturnBook, bibliotecaService);
 
         assertEquals("Thank you for returning the book.", bibliotecaRouter.getRouterMessage("Book").getText());
     }

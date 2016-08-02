@@ -79,11 +79,16 @@ public class ServiceTests {
     }
 
     @Test
-    public void should_return_true_when_return_a_checked_out_book() {
+    public void should_return_true_when_checked_user_return_his_book() {
         ArrayList<Book> books = new ArrayList<Book>();
-        books.add(new Book("Checked Book", "Author", 1, true));
+        Book book = new Book("Book", "Author", 1, true);
+        books.add(book);
+        book.setCheckedUser("001-0000");
 
-        assertTrue(new BibliotecaService(books, null).returnBook("Checked Book"));
+        BibliotecaService bibliotecaService = new BibliotecaService(books, null);
+        bibliotecaService.setCurrentUser("001-0000");
+
+        assertTrue(bibliotecaService.returnBook("Book"));
     }
 
     @Test
@@ -135,5 +140,28 @@ public class ServiceTests {
         books.add(new Book("Book", "Author", 1));
 
         assertFalse(new BibliotecaService(books, null).checkoutBook("Book"));
+    }
+
+    @Test
+    public void should_return_false_when_return_book_but_not_loged_in() {
+        ArrayList<Book> books = new ArrayList<Book>();
+        Book book = new Book("Book", "Author", 1, true);
+        books.add(book);
+        book.setCheckedUser("001-0000");
+
+        assertFalse(new BibliotecaService(books, null).returnBook("Book"));
+    }
+
+    @Test
+    public void should_return_false_when_another_user_return_the_book() {
+        ArrayList<Book> books = new ArrayList<Book>();
+        Book book = new Book("Book", "Author", 1, true);
+        books.add(book);
+        book.setCheckedUser("001-0000");
+
+        BibliotecaService bibliotecaService = new BibliotecaService(books, null);
+        bibliotecaService.setCurrentUser("002-0000");
+
+        assertFalse(bibliotecaService.returnBook("Book"));
     }
 }

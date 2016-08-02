@@ -6,6 +6,7 @@ public class Book {
     private final String author;
     private final int publishYear;
     private boolean isChecked;
+    private String checkedUser;
 
     public Book(String name, String author, int publishYear) {
         this.name = name;
@@ -38,5 +39,13 @@ public class Book {
 
     public int getPublishYear() {
         return publishYear;
+    }
+
+    public String getCheckedUser() {
+        return checkedUser;
+    }
+
+    public void setCheckedUser(String checkedUser) {
+        this.checkedUser = checkedUser;
     }
 }
