@@ -183,4 +183,12 @@ public class ShellTests {
     public void should_wait_for_input_when_select_cheout_movies_in_main_menu() throws Exception {
         assertTrue(new BibliotecaRouter(RouterState.MainMenu, null).getRouterMessage("5").getWaitForUserInput());
     }
+
+    @Test
+    public void should_display_main_menu_when_continue_getRouterMessage_after_input_movie_name_in_main_menu() throws Exception {
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.CheckMovie, new BibliotecaService(null, new ArrayList<Movie>(0)));
+        bibliotecaRouter.getRouterMessage("any movie");
+
+        assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).getText());
+    }
 }
