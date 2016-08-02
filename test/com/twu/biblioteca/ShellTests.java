@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.Service.BibliotecaService;
 import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.Movie;
 import com.twu.biblioteca.router.BibliotecaRouter;
 import com.twu.biblioteca.router.RouterState;
 import com.twu.biblioteca.router.MainMenuString;
@@ -163,5 +164,18 @@ public class ShellTests {
                 new BibliotecaService(new ArrayList<Book>(0), null));
 
         assertEquals("That is not a valid book to return.", bibliotecaRouter.getRouterMessage("Not Exist Book").getText());
+    }
+
+    @Test
+    public void should_display_all_movies_when_select_list_movies_in_main_menu() throws Exception {
+        ArrayList<Movie> movies = new ArrayList<Movie>();
+        movies.add(new Movie("Movie 1", 1, "Director 1", 5));
+        movies.add(new Movie("Movie 2", 2, "Director 2", 8));
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(null, movies));
+
+        String expectedString = "Name: Movie 1, Year: 1, Director: Director 1, Rate: 5\n" +
+                "Name: Movie 2, Year: 2, Director: Director 2, Rate: 8\n" ;
+
+        assertEquals(expectedString, bibliotecaRouter.getRouterMessage("5").getText());
     }
 }

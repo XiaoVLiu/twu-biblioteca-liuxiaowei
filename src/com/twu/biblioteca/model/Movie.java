@@ -12,4 +12,20 @@ public class Movie {
         this.director = director;
         this.rate = rate;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public int getRate() {
+        return rate;
+    }
 }
