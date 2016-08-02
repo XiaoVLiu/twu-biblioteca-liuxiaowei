@@ -32,6 +32,10 @@ public class BibliotecaService {
     }
 
     public boolean checkoutBook(String checkoutBookName) {
+        if (currentUser == null) {
+            return false;
+        }
+
         for (Book book: allBooks) {
             if (book.getName().equals(checkoutBookName) && !book.getIsChecked()) {
                 book.setIsChecked(true);
@@ -69,5 +73,9 @@ public class BibliotecaService {
 
     public String getCurrentUser() {
         return currentUser;
+    }
+
+    public void setCurrentUser(String currentUser) {
+        this.currentUser = currentUser;
     }
 }

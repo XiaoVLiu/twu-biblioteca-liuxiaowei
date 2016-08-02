@@ -45,6 +45,7 @@ public class ServiceTests {
         ArrayList<Book> books = new ArrayList<Book>();
         books.add(new Book("Book", "Author", 1));
         BibliotecaService bibliotecaService = new BibliotecaService(books, null);
+        bibliotecaService.setCurrentUser("001-0000");
 
         assertTrue(bibliotecaService.checkoutBook("Book"));
     }
@@ -126,5 +127,13 @@ public class ServiceTests {
     @Test
     public void should_return_false_when_checkout_a_not_exist_movie_name() {
         assertFalse(new BibliotecaService(null, new ArrayList<Movie>(0)).checkoutMovie("Movie"));
+    }
+
+    @Test
+    public void should_return_false_when_checkout_book_but_not_loged_in() {
+        ArrayList<Book> books = new ArrayList<Book>();
+        books.add(new Book("Book", "Author", 1));
+
+        assertFalse(new BibliotecaService(books, null).checkoutBook("Book"));
     }
 }
