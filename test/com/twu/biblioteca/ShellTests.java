@@ -24,7 +24,7 @@ public class ShellTests {
 
     @Test
     public void should_display_main_menu_when_current_state_is_main_menu() throws Exception {
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, null);
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(null, null));
 
         assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).getText());
     }
@@ -53,7 +53,7 @@ public class ShellTests {
 
     @Test
     public void should_display_main_menu_when_continue_getRouterMessage_after_select_invalid_option_in_main_menu() throws Exception {
-        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, null);
+        BibliotecaRouter bibliotecaRouter = new BibliotecaRouter(RouterState.MainMenu, new BibliotecaService(null, null));
         bibliotecaRouter.getRouterMessage("invalid option");
         assertEquals(MainMenuString.getString(), bibliotecaRouter.getRouterMessage(null).getText());
     }
@@ -231,5 +231,15 @@ public class ShellTests {
 
         assertEquals("please login!", routerMessage.getText());
         assertTrue(routerMessage.getWaitForUserInput());
+    }
+
+    @Test
+    public void should_display_main_menu_when_user_has_login() throws Exception {
+        BibliotecaService bibliotecaService = new BibliotecaService(null, null);
+        bibliotecaService.setCurrentUser("any user");
+
+        RouterMessage routerMessage = new BibliotecaRouter(RouterState.MainMenu, bibliotecaService).getRouterMessage(null);
+
+        assertEquals(MainMenuString.getStringWithUserInfo(), routerMessage.getText());
     }
 }

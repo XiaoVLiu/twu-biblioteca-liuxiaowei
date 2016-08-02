@@ -19,7 +19,11 @@ public class MainMenuHandler  implements IActionHandler{
     @Override
     public RouterMessage handle(String userInput) {
         if (userInput == null) {
-            return new RouterMessage(MainMenuString.getString(), true, false);
+            String messageText = bibliotecaService.getCurrentUser() == null ?
+                    MainMenuString.getString() :
+                    MainMenuString.getStringWithUserInfo();
+
+            return new RouterMessage(messageText, true, false);
         }
 
         if (userInput.equals("1")) {
