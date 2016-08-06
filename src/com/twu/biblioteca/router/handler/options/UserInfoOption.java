@@ -1,26 +1,26 @@
 package com.twu.biblioteca.router.handler.options;
 
 import com.twu.biblioteca.Service.BibliotecaService;
-import com.twu.biblioteca.router.MainMenuString;
+import com.twu.biblioteca.model.ModelExtension;
 import com.twu.biblioteca.router.RouterContext;
 import com.twu.biblioteca.router.RouterMessage;
 
-public class NullOptionHandler implements IOptionHandlers {
+public class UserInfoOption implements IOptionHandlers{
     private final RouterContext routerContext;
     private final BibliotecaService bibliotecaService;
 
-    public NullOptionHandler(RouterContext routerContext, BibliotecaService bibliotecaService) {
+    public UserInfoOption(RouterContext routerContext, BibliotecaService bibliotecaService) {
         this.routerContext = routerContext;
         this.bibliotecaService = bibliotecaService;
     }
 
     @Override
     public RouterMessage handle(String userInput) {
-        String messageText = bibliotecaService.getCurrentUser() == null ?
-                MainMenuString.getString() :
-                MainMenuString.getStringWithUserInfo();
 
-        return new RouterMessage(messageText, true, false);
+        if (bibliotecaService.getCurrentUser() == null) {
+            return new RouterMessage("Not available option!", false, false);
+        }
 
+        return new RouterMessage(ModelExtension.toFormattedString(bibliotecaService.getCurrentUser()), false, false);
     }
 }
