@@ -6,6 +6,9 @@ import com.twu.biblioteca.router.MainMenuString;
 import com.twu.biblioteca.router.RouterContext;
 import com.twu.biblioteca.router.RouterMessage;
 import com.twu.biblioteca.router.RouterState;
+import com.twu.biblioteca.router.handler.options.CheckoutBookOption;
+import com.twu.biblioteca.router.handler.options.ListBooksOption;
+import com.twu.biblioteca.router.handler.options.NullOptionHandler;
 
 public class MainMenuHandler  implements IActionHandler{
     private final RouterContext routerContext;
@@ -19,25 +22,15 @@ public class MainMenuHandler  implements IActionHandler{
     @Override
     public RouterMessage handle(String userInput) {
         if (userInput == null) {
-            String messageText = bibliotecaService.getCurrentUser() == null ?
-                    MainMenuString.getString() :
-                    MainMenuString.getStringWithUserInfo();
-
-            return new RouterMessage(messageText, true, false);
+            return new NullOptionHandler(routerContext, bibliotecaService).handle(userInput);
         }
 
         if (userInput.equals("1")) {
-            return new RouterMessage(ModelExtension.toFormattedString(bibliotecaService.listAllBooks()), false, false);
+            return new ListBooksOption(routerContext, bibliotecaService).handle(userInput);
         }
 
         if (userInput.equals("2")) {
-            if (bibliotecaService.getCurrentUser() == null) {
-                routerContext.setNextState(RouterState.Login);
-                return new RouterMessage("please login!", true, false);
-            }
-
-            routerContext.setNextState(RouterState.CheckBook);
-            return new RouterMessage("", true, false);
+            return new CheckoutBookOption(routerContext, bibliotecaService).handle(userInput);
         }
 
         if (userInput.equals("3")) {
